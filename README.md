@@ -1,143 +1,144 @@
 # ZKMNEXT GameSpace
 
-**Game launcher, monitoring perangkat, dan kontrol in-game untuk Android.**
+**Your games. Your controls. Your space.**
 
-ZKMNEXT GameSpace menggabungkan koleksi game, profil permainan, statistik bermain, dan overlay dalam satu aplikasi mandiri. Pilih tampilan **Explore** untuk navigasi dan informasi perangkat, atau **Handheld / X-Arena** untuk pengalaman konsol landscape dengan wallpaper, animasi, dan efek LED di dalam antarmuka.
+ZKMNEXT GameSpace is an Android gaming hub by **zuanvfx02**. Organize your games, customize their profiles, open floating tools while playing, and keep screenshots and recordings together. Choose a compact everyday interface or a landscape console-style experience.
 
-[Releases](https://github.com/zuanvfx02/zkmnext-gamespace/releases) · [Source code](https://github.com/zuanvfx02/zkmnext-gamespace) · [Laporkan masalah](https://github.com/zuanvfx02/zkmnext-gamespace/issues)
+[Download](https://github.com/zuanvfx02/zkmnext-gamespace/releases/latest) · [All releases & changelogs](https://github.com/zuanvfx02/zkmnext-gamespace/releases) · [Report an issue](https://github.com/zuanvfx02/zkmnext-gamespace/issues)
 
-> **Status pengembangan:** fitur di bawah sudah diintegrasikan dalam source. Build terakhir belum melewati tahap resolusi Android Gradle Plugin `9.4.1`, sehingga kompilasi penuh dan pengujian perangkat belum terverifikasi.
+> Device controls are capability-dependent. Features vary with Android version, ROM, chipset, kernel, available sensors, permissions, and selected access backend. The app does not guarantee higher FPS, lower temperatures, or compatibility with every game.
 
-## Fitur
+## Features
 
-### Launcher dan tampilan
+### Your game library
 
-- **Explore:** informasi perangkat, status akses, navigasi fitur, dan halaman monitoring.
-- **Handheld / X-Arena:** antarmuka landscape dengan koleksi game dan panel kontrol.
-- Profil pengaturan global dan pengaturan khusus setiap game.
-- Mode **Balance, Dynamic, Performance, dan Custom**, dengan kemampuan yang mengikuti akses perangkat.
-- Wallpaper bawaan atau gambar dari galeri, warna aksen, animasi pembuka, dan efek LED antarmuka.
+- Add installed games and launch them from a dedicated library.
+- Create per-game settings instead of changing every game together.
+- Customize game covers, backgrounds, and profile appearance.
+- Access the GameSpace Center and Super Base for tools and settings.
 
-### Monitoring dan overlay
+### Interface modes and appearance
 
-- Informasi CPU/GPU, frekuensi, RAM, penyimpanan, baterai, suhu, dan refresh rate sesuai data yang tersedia.
-- Panel kontrol in-game, floating FPS, crosshair, dan stopwatch.
-- **Ultra Smooth** meminta refresh rate layar yang didukung hingga 120 Hz. Hasil aktual mengikuti panel, ROM, suhu, dan beban perangkat; fitur ini tidak menjamin game berjalan pada 120 FPS.
-- Screenshot, Super Snap, dan perekaman layar melalui akses yang didukung.
+- **Explore:** an everyday dashboard and settings experience.
+- **Handheld:** a landscape console-inspired lobby.
+- **Gamepad:** a controller-oriented interface.
+- Customize supported themes, colors, wallpaper, covers, and visual effects.
+- Blur depends on Android 12+, the system's blur setting, and device support. Available appearance settings let users choose their preferred presentation.
 
-### Game Center
+### In-game overlays
 
-| Bagian | Fungsi |
+- **Energy Cube** and **Compact** panels provide different arrangements of quick controls and monitoring.
+- Open Notes, game controls, and supported plugins without navigating the full lobby.
+- Notes supports text and image attachments/import.
+- Floating tools require Android's display-over-other-apps permission.
+
+### Monitoring and device controls
+
+- View supported CPU, GPU, RAM, temperature, battery, network, and FPS information.
+- Use available performance profiles and per-game configuration.
+- Thermal Advance provides supported thermal monitoring and controls.
+- Advanced CPU/GPU, charging, kernel, fan, and display options depend on readable/writable device interfaces and privileged access. Root alone does not create hardware support.
+- Missing or inaccessible telemetry is not proof that a device component is faulty.
+
+### Plugins and input tools
+
+Depending on the device and access backend, the plugin library includes:
+
+- **Gravity X:** peripheral setup, mapping schemes, and on-screen mapping tools.
+- **Shoulder triggers / key mapping:** supported button-to-touch controls.
+- **Gyro Manipulation:** motion-direction mappings to configured touch targets.
+- **MTP (Motivation to Play):** customizable text, imagery and voice, with pack import/export.
+- **Free to Display:** supported game display/orientation/aspect configuration and restart flow.
+- Crosshair and aim-related tools, macro tools, touch/data panels, stopwatch, and other helpers.
+
+Individual plugin availability is checked separately. Input injection and game modifications may be restricted by Android or the game. Review the game's rules before enabling automation or mapping tools.
+
+### Task Manager
+
+- A floating process view and monitoring dashboard.
+- End eligible user-application processes through a supported backend.
+- App Freezer controls for eligible user apps, with frozen entries accessible for unfreezing.
+- System applications are protected from user-app end/freeze actions.
+
+### Captures, music and personalization
+
+- Capture screenshots and record gameplay using the appropriate permissions/access.
+- **GameSpace Album:** game tabs, image/video filters, date grouping, media import, viewing and sharing.
+- New tagged captures can be organized by game; older or untagged files may appear as unassigned.
+- Music controls and supported media-session integration.
+- Local settings backup/restore and diagnostics for troubleshooting.
+
+## Requirements and access modes
+
+**Minimum Android:** Android 10 (API 29). Some features require newer Android versions.
+
+| Access | Intended use |
 | --- | --- |
-| Profile | Nama dan avatar, rank, total waktu bermain, game favorit, hari aktif, serta mode akses. |
-| Data | Pie chart waktu bermain, tab Today / Week / All Time, catatan per game, dan penghitung capture. |
-| Game Achievements | Ringkasan waktu bermain dan daftar per game untuk Today / Week, dengan rank sepanjang waktu. |
-| Network settings | Menjaga data seluler tetap siaga saat Wi-Fi aktif dan Wi-Fi lock selama sesi. |
-| Screen Settings | Lock brightness, pilihan hemat layar 60 Hz, dan pengaturan saturasi warna. |
-| Anti disturbance | DND, kontrol heads-up, mini popup panggilan, serta Barrage Message. |
-| System anti mistouch | Strip pelindung sentuhan di tepi kiri dan kanan, dengan lebar yang dapat diatur. |
-| Peripheral connection | Daftar gamepad, joystick, dan mouse tersambung beserta popup koneksi. |
-| Atmosphere LED & wallpaper | Efek cahaya pada antarmuka konsol dan pengaturan latar GameSpace. |
-| Watermark | Teks kustom pada screenshot dan overlay watermark saat merekam layar. |
-| Other options | Sembunyikan ikon launcher aplikasi ini, animasi pembuka, hemat layar, popup peripheral, dan pengingat bermain. |
+| Basic | Library, interface, profiles and other features that do not require privileged system access. Individual Android permissions still apply. |
+| Shizuku | Supported shell-level operations when Shizuku is running and access has been granted. |
+| Axeron | Supported privileged-shell operations through the configured Axeron backend. |
+| Root | Supported system/kernel controls when root is available and the device exposes the required interfaces. |
 
-**Barrage Message** mendukung empat gaya bubble, kecepatan/durasi tampilan, posisi, ukuran font, batas karakter, opacity, serta pemilihan sumber aplikasi dengan pencarian. Quick reply tersedia jika notifikasi sumber menyediakan aksi balas; pesan dikirim setelah pengguna menekan **Send**.
+Permission examples:
 
-## Mode akses
-
-| Mode | Kemampuan |
+| Permission/access | Why it may be requested |
 | --- | --- |
-| **No Root / Basic** | Launcher, pengaturan tampilan, profil, catatan, statistik sesi, data monitoring yang dapat dibaca, serta overlay dengan izin Android yang sesuai. |
-| **Shizuku / Axeron** | Menambah akses shell untuk fitur yang memerlukannya, seperti capture dan sebagian pengaturan sistem. Layanan serta izinnya harus aktif. |
-| **Root** | Membuka kontrol tambahan pada sistem/kernel yang didukung. Ketersediaan node dan fitur tetap bergantung pada perangkat. |
+| Display over other apps | Floating panels and tools |
+| Usage access | Foreground-game detection and usage information |
+| Notifications | Service status, optional features, and update alerts |
+| Photos/videos or selected documents | Album and imported media |
+| Screen capture consent / microphone | Recording and optional recording audio |
+| Notification access / Do Not Disturb access | Optional notification and focus-related tools |
 
-Shizuku yang berjalan sebagai ADB tidak memberikan seluruh kemampuan root. Nilai monitoring atau kontrol yang tidak didukung perangkat tidak dapat dijamin tersedia.
+Grant access for the features you intend to use. Android and ROM restrictions may limit behavior even after permission is granted.
 
-## Mulai menggunakan
+## Install and update
 
-1. Cek [Releases](https://github.com/zuanvfx02/zkmnext-gamespace/releases) untuk ketersediaan APK, atau build dari source setelah kebutuhan build terpenuhi.
-2. Buka aplikasi dan pilih mode akses yang sesuai.
-3. Berikan izin yang diperlukan untuk fitur yang ingin digunakan.
-4. Tambahkan game ke koleksi, atur profilnya, lalu aktifkan deteksi game.
-5. Jalankan game untuk menggunakan pengaturan sesi dan overlay.
+1. Open [GitHub Releases](https://github.com/zuanvfx02/zkmnext-gamespace/releases).
+2. Download the **APK attached under Assets**. GitHub's generated “Source code (zip)” and “Source code (tar.gz)” entries are not installable apps.
+3. Install the APK and grant installation permission to your browser/file manager if Android requests it.
+4. Add a game, choose an interface mode, and configure optional permissions.
 
-### Izin fitur
+**Automatic release checks:** the updated source checks stable GitHub Releases when the main app opens and schedules a network-constrained background check approximately every six hours. Android controls background timing; force-stop, battery restrictions and lack of connectivity can delay checks.
 
-| Izin | Digunakan untuk |
-| --- | --- |
-| Usage Access | Mendeteksi game yang sedang berada di depan. |
-| Draw Over Other Apps | Panel in-game, bubble, crosshair, perlindungan tepi, dan overlay lainnya. |
-| Notifications | Menampilkan notifikasi layanan dan akses kembali ke aplikasi. |
-| Notification Access | Membaca notifikasi yang dipilih untuk Barrage dan popup panggilan. |
-| Do Not Disturb Access | Mengatur DND selama sesi game. |
-| Root / Shizuku / Axeron | Menjalankan fitur yang memerlukan akses shell atau sistem. |
+When a newer release is found, the app can show an update dialog with release notes. Background notifications require notification permission and an enabled update channel. “Later” snoozes the dialog for that release for 24 hours. You can also check manually in the update/settings page.
 
-Sumber aplikasi Barrage dimulai dalam keadaan nonaktif. Pilih sumbernya melalui **Game Center → Anti disturbance → Sources**. Popup dibatasi pada sesi game yang terdeteksi saat perangkat tidak terkunci.
+**Downloads and installation are user-confirmed.** The app opens GitHub/the APK link in a browser; it does not silently install updates. Full changelog history is available from GitHub Releases and the app's “What's new” page. A newer GitHub tag must compare higher than the installed app version; replacing the APK under the same tag/version does not produce a new update.
 
-## Statistik dan data lokal
+For an update to install over an existing copy, use the same package identity and a compatible signing key, and increase the Android versionCode. Keep your signing keystore backed up. Reinstalling a differently signed APK may require uninstalling first and can remove local data.
 
-Profil, catatan, dan pengaturan disimpan pada perangkat. Pencatatan per hari dan penghitung capture dimulai sejak versi source yang menambahkan fitur tersebut; total waktu bermain sebelumnya tetap tersedia pada **All Time**.
+## Troubleshooting
 
-- **Week** mencakup tujuh hari kalender lokal terakhir.
-- Rank dihitung dari total waktu bermain sepanjang waktu.
-- Penghitung capture mencatat aksi melalui GameSpace, bukan jumlah file yang masih ada di galeri.
-- Teks notifikasi Barrage disimpan sementara di memori; fitur ini tidak menambahkan log pesan permanen.
+- **No update shown:** publish a stable, non-draft GitHub Release with a higher version tag and a directly attached `.apk`. Check connectivity and GitHub rate limits. Automatic checks are cached for six hours.
+- **No notification:** allow notifications and enable the App updates channel. The in-app dialog works independently of notification permission.
+- **Install/update rejected:** check the signing key, versionCode, Android compatibility, and whether the download completed.
+- **Overlay missing:** check overlay permission, game detection and ROM background/battery restrictions.
+- **Missing sensor/FPS/control:** run the app's compatibility checks and verify access. Universal monitoring/writing is not guaranteed.
+- **Black screen or force-close:** include the version, device/ROM, access mode, trigger steps and available diagnostics in an issue. Integrity checks are not proof of complete security and may require investigation when they fail.
 
-## Dukungan perangkat
+## Privacy and security
 
-Sebagian pengaturan brightness, refresh rate, saturasi, jaringan, dan performa memerlukan akses tambahan atau dukungan ROM/kernel. Preferensi khusus game dapat menggantikan pengaturan global.
+Settings and user media are managed locally by the relevant features; Android media/document permissions control external media access. The updater contacts GitHub to retrieve public release metadata and notes. Opening links, downloads and external media viewers involves those external services/apps.
 
-- Efek **Atmosphere LED** berlaku pada antarmuka GameSpace. LED fisik di belakang perangkat memerlukan integrasi OEM.
-- Competitive key fisik, IntelliTouch, Z-POP, mode peripheral khusus OEM, konfirmasi gesture dua kali, dan pemblokiran gesture/status bar tingkat sistem belum memiliki integrasi dalam build ini.
-- Deteksi highlight otomatis dan snapshot game pada lock screen belum diimplementasikan.
-- Aksi jawab/tolak panggilan dan quick reply mengikuti kemampuan notifikasi aplikasi sumber.
-- Perekaman watermark memakai overlay; hasil tangkapannya perlu diuji pada perangkat tujuan.
-- Strip anti-mistouch tidak menggantikan pengenalan gesture sistem Android. Perlindungan dapat dimatikan melalui notifikasi layanan.
-- Menyembunyikan ikon hanya memengaruhi ikon launcher GameSpace. Detektor harus aktif agar aplikasi dapat dibuka kembali melalui notifikasinya.
+Do not post private keys, keystores, passwords, tokens, or personal diagnostic information in issues. Review diagnostic exports before sharing. Report security concerns through the repository's available security-reporting route; avoid publishing sensitive exploit details in a public issue.
 
-## Build dari source
+## Source availability and licensing
 
-Konfigurasi source saat ini:
+**The current development source is not publicly published.** For now, this public repository is intended for APK releases, release notes, documentation, and issue tracking; it is not a public checkout of the current development tree.
 
-| Komponen | Nilai |
-| --- | --- |
-| Application ID | `com.zkmnext.gamespace` |
-| Minimum Android | Android 10 / API 29 |
-| Compile SDK | API 37 |
-| Target SDK | API 35 |
-| Java / JVM target | 21 |
-| Android Gradle Plugin | `9.4.1` |
-| Kotlin Compose plugin | `2.4.21` |
+This availability status does not replace existing licenses. The supplied project contains GPL-3.0-or-later notices and a GPLv3 license, together with third-party components under their own terms. Applicable copyright notices, license terms, and corresponding-source obligations remain in force. Withholding a public repository does not remove obligations that apply when distributing GPL-covered binaries. Source requests can be raised with the maintainer through the repository; the maintainer must ensure the required corresponding source is actually provided through an appropriate channel where applicable.
 
-Gunakan JDK 21 dan Android SDK yang sesuai. Buka direktori yang berisi `settings.gradle.kts`, `build.gradle.kts`, dan folder `app/` di Android Studio. Jika memakai ZIP project, direktori tersebut adalah `GameSpaceApp/`.
+Do not describe GPL-covered upstream code as exclusively proprietary or remove its notices merely because current development is private. No new proprietary license is asserted by this README. Review the existing LICENSE, third-party notices and distribution requirements before publishing a release.
 
-Setelah dependensi dan toolchain dapat di-resolve:
+## Feedback and support
 
-```bash
-# Linux / macOS
-chmod +x gradlew
-./gradlew :app:assembleDebug
-```
+When reporting a problem, include:
 
-```powershell
-# Windows
-.\gradlew.bat :app:assembleDebug
-```
+- App version and Android version.
+- Device model, ROM, chipset and access backend.
+- Steps to reproduce, expected behavior, and what happened.
+- Screenshots or sanitized diagnostics when useful.
 
-APK debug yang berhasil dibangun berada di:
+Share your setup, suggest improvements, and help make GameSpace easier to use. Community: **ZUANVFX**.
 
-```text
-app/build/outputs/apk/debug/app-debug.apk
-```
-
-**Catatan toolchain:** launcher `gradlew` / `gradlew.bat` pada source ini memakai bootstrap Gradle 8.13, sementara `gradle-wrapper.properties` menunjuk Gradle 9.8.0. Konfigurasi tersebut perlu diselaraskan dengan kebutuhan AGP dan Kotlin sebelum build dapat dianggap siap digunakan. Percobaan build terakhir berhenti karena AGP `9.4.1` tidak berhasil di-resolve dari repositori yang dikonfigurasi.
-
-Pemeriksaan sintaks Kotlin dan XML sudah dilakukan untuk perubahan Game Center; pemeriksaan tersebut belum menggantikan kompilasi Android dan pengujian perangkat.
-
-## Melaporkan masalah
-
-Sertakan model perangkat, versi Android/ROM, versi aplikasi atau commit, mode akses, langkah reproduksi, dan hasil yang diharapkan. Untuk masalah overlay atau monitoring, sertakan izin yang aktif dan fitur yang terdampak. Lampirkan log yang relevan setelah menghapus informasi pribadi.
-
-## Lisensi
-
-Source menggunakan **GPL-3.0-or-later** sesuai header kode. Lihat [LICENSE](LICENSE) dan pemberitahuan lisensi pada file terkait.
+**Maintained by zuanvfx02.**
