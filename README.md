@@ -2,9 +2,14 @@
 
 **Your games. Your controls. Your space.**
 
+[![Downloads](https://img.shields.io/github/downloads/zuanvfx02/zkmnext-gamespace/total?style=for-the-badge&logo=github&color=00E676&label=Total%20Downloads)](https://github.com/zuanvfx02/zkmnext-gamespace/releases)
+[![Latest Release](https://img.shields.io/github/v/release/zuanvfx02/zkmnext-gamespace?style=for-the-badge&logo=android&color=2979FF&label=Latest)](https://github.com/zuanvfx02/zkmnext-gamespace/releases/latest)
+[![Latest Release Downloads](https://img.shields.io/github/downloads/zuanvfx02/zkmnext-gamespace/latest/total?style=for-the-badge&logo=android&color=FF9100&label=Latest%20APK%20Downloads)](https://github.com/zuanvfx02/zkmnext-gamespace/releases/latest)
+
 ZKMNEXT GameSpace is an Android gaming hub by **zuanvfx02**. Organize your games, customize their profiles, open floating tools while playing, and keep screenshots and recordings together. Choose a compact everyday interface or a landscape console-style experience.
 
 [Download](https://github.com/zuanvfx02/zkmnext-gamespace/releases/latest) · [All releases & changelogs](https://github.com/zuanvfx02/zkmnext-gamespace/releases) · [Report an issue](https://github.com/zuanvfx02/zkmnext-gamespace/issues)
+
 
 > Device controls are capability-dependent. Features vary with Android version, ROM, chipset, kernel, available sensors, permissions, and selected access backend. The app does not guarantee higher FPS, lower temperatures, or compatibility with every game.
 
