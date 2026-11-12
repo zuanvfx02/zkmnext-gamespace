@@ -19,11 +19,11 @@ const ICON = {
 };
 
 const community = [
-  ['tg', 'Channel resmi', 'Rilis APK dan pengumuman resmi.', '@ZUANVFXPROJECT3', 'https://t.me/ZUANVFXPROJECT3', '#62e7ce'],
-  ['tg', 'Info pra-rilis', 'Kabar fitur sebelum project rilis.', '@ZuanvfxArch', 'https://t.me/ZuanvfxArch', '#6fb1ff'],
-  ['chat', 'Grup diskusi', 'Tanya, lapor bug, dan berbagi setup.', '@zuanvfx01project3chat', 'https://t.me/zuanvfx01project3chat', '#b18cff'],
-  ['chat', 'Grup Kernel Manager Next', 'Ngobrol soal kernel dan tuning.', '@zuankernelmanagernextgroup', 'https://t.me/zuankernelmanagernextgroup', '#ffc46b'],
-  ['heart', 'Donasi', 'Dukung pengembangan lewat Sociabuzz.', 'sociabuzz.com/zuanvfx01', 'https://sociabuzz.com/zuanvfx01/tribe', '#ff6fae']
+  ['tg', 'Official channel', 'Official APK releases and announcements.', '@ZUANVFXPROJECT3', 'https://t.me/ZUANVFXPROJECT3', '#62e7ce'],
+  ['tg', 'Pre-release news', 'Updates on features before release.', '@ZuanvfxArch', 'https://t.me/ZuanvfxArch', '#6fb1ff'],
+  ['chat', 'Discussion group', 'Ask questions, report bugs and share your setup.', '@zuanvfx01project3chat', 'https://t.me/zuanvfx01project3chat', '#b18cff'],
+  ['chat', 'Kernel Manager Next group', 'Discuss kernels and tuning.', '@zuankernelmanagernextgroup', 'https://t.me/zuankernelmanagernextgroup', '#ffc46b'],
+  ['heart', 'Donate', 'Support development through Sociabuzz.', 'sociabuzz.com/zuanvfx01', 'https://sociabuzz.com/zuanvfx01/tribe', '#ff6fae']
 ];
 const ext = 'target="_blank" rel="noopener noreferrer"';
 
@@ -42,27 +42,27 @@ function home() {
 }
 
 function howItWorks() {
-  document.title = 'Cara kerja · ZKMNEXT Docs';
+  document.title = 'How it works · ZKMNEXT Docs';
   document.body.classList.add('wide');
-  $('#content').innerHTML = `<article class="article"><div class="breadcrumb"><a href="#">Docs</a> / Cara kerja</div><h1>Cara kerja GameSpace</h1><p class="lead">Ikuti sinyal dari jarimu, lewat plugin dan proses istimewa, sampai ke game. Pilih satu alur, atau ketuk titik mana pun untuk membaca perannya.</p><div id="flow-root"></div><p class="flow-note">Peta ini mengikuti kelas di source ${VERSION} (KeymapInjector, IRootService, RootServiceImpl, LegacyNodeJournal, ScoutGuard). Animasi menyederhanakan urutan dan waktunya, jadi kecepatannya tidak sama dengan perangkat asli.</p></article>`;
+  $('#content').innerHTML = `<article class="article"><div class="breadcrumb"><a href="#">Docs</a> / How it works</div><h1>How GameSpace works</h1><p class="lead">Follow a signal from your fingers through plugins and the privileged process to the game. Choose a flow or select any node to learn its role.</p><div id="flow-root"></div><p class="flow-note">This map follows source classes in ${VERSION} (KeymapInjector, IRootService, RootServiceImpl, LegacyNodeJournal, ScoutGuard). Animation simplifies the sequence and timing; it does not represent actual device speed.</p></article>`;
   import('./flow.js').then(m => {
     if (currentId() === FLOW_ID && $('#flow-root')) destroyFlow = m.mountFlow($('#flow-root'));
-  }).catch(() => { $('#flow-root').innerHTML = '<p class="lead">Peta interaktif gagal dimuat. Muat ulang halaman.</p>'; });
+  }).catch(() => { $('#flow-root').innerHTML = '<p class="lead">The interactive map could not load. Reload the page.</p>'; });
 }
 
 function article(a) {
   document.title = a.title + ' · ZKMNEXT Docs';
   const index = guides.indexOf(a);
   const md = a.id === 'expressive' ? '<a href="expressive-experience.md">Source Markdown ↗</a>' : MARKDOWN.has(a.id) ? `<a href="${a.id}.md">Source Markdown ↗</a>` : '';
-  const prev = index ? `<a href="#${guides[index - 1].id}"><small>← SEBELUMNYA</small>${esc(guides[index - 1].title)}</a>` : '<a href="#"><small>← KEMBALI</small>Overview</a>';
-  const next = index < guides.length - 1 ? `<a href="#${guides[index + 1].id}"><small>SELANJUTNYA →</small>${esc(guides[index + 1].title)}</a>` : '<a href="#start"><small>KEMBALI →</small>Panduan awal</a>';
+  const prev = index ? `<a href="#${guides[index - 1].id}"><small>← PREVIOUS</small>${esc(guides[index - 1].title)}</a>` : '<a href="#"><small>← BACK</small>Overview</a>';
+  const next = index < guides.length - 1 ? `<a href="#${guides[index + 1].id}"><small>NEXT →</small>${esc(guides[index + 1].title)}</a>` : '<a href="#start"><small>BACK →</small>Getting started</a>';
   const minutes = Math.max(1, Math.ceil(a.sections.flatMap(s => s.paragraphs).join(' ').split(/\s+/).length / 180));
   const contents = a.sections.map((s, i) => `<a href="#${a.id}/s${i}" data-section="s${i}">${esc(s.title)}</a>`).join('');
-  $('#content').innerHTML = `<article class="article"><div class="breadcrumb"><a href="#">Docs</a> / ${esc(a.group)}</div><h1>${esc(a.title)}</h1><p class="lead">${esc(a.description)}</p><div class="article-info"><span>${VERSION} · ${minutes} menit baca · ${a.sections.length} bagian</span><button id="copy-guide" type="button">Salin tautan ↗</button>${md}</div><details class="mobile-toc"><summary>Di halaman ini</summary>${contents}</details>${a.sections.map((s, i) => `<section id="s${i}" class="reveal"><h2>${esc(s.title)}</h2>${s.paragraphs.map(p => `<p class="${/^\d\./.test(p) ? 'step' : ''}">${esc(p)}</p>`).join('')}</section>`).join('')}<div class="pager">${prev}${next}</div></article>`;
-  $('#toc').innerHTML = '<strong>Di halaman ini</strong>' + a.sections.map((s, i) => `<a href="#${a.id}/s${i}" data-section="s${i}">${esc(s.title)}</a>`).join('');
+  $('#content').innerHTML = `<article class="article"><div class="breadcrumb"><a href="#">Docs</a> / ${esc(a.group)}</div><h1>${esc(a.title)}</h1><p class="lead">${esc(a.description)}</p><div class="article-info"><span>${VERSION} · ${minutes} min read · ${a.sections.length} sections</span><button id="copy-guide" type="button">Copy link ↗</button>${md}</div><details class="mobile-toc"><summary>On this page</summary>${contents}</details>${a.sections.map((s, i) => `<section id="s${i}" class="reveal"><h2>${esc(s.title)}</h2>${s.paragraphs.map(p => `<p class="${/^\d\./.test(p) ? 'step' : ''}">${esc(p)}</p>`).join('')}</section>`).join('')}<div class="pager">${prev}${next}</div></article>`;
+  $('#toc').innerHTML = '<strong>On this page</strong>' + a.sections.map((s, i) => `<a href="#${a.id}/s${i}" data-section="s${i}">${esc(s.title)}</a>`).join('');
   $('#copy-guide').onclick = async () => {
-    try { await navigator.clipboard.writeText(location.href); $('#copy-guide').textContent = 'Tautan disalin'; }
-    catch { $('#copy-guide').textContent = 'Salin alamat dari browser'; }
+    try { await navigator.clipboard.writeText(location.href); $('#copy-guide').textContent = 'Link copied'; }
+    catch { $('#copy-guide').textContent = 'Copy the address from your browser'; }
   };
   if ('IntersectionObserver' in window) {
     sectionObserver = new IntersectionObserver(entries => entries.forEach(entry => {
@@ -105,7 +105,7 @@ function render() {
   if (!id) home();
   else if (id === FLOW_ID) howItWorks();
   else if (a) article(a);
-  else $('#content').innerHTML = '<h1>Panduan tidak ditemukan.</h1><p class="lead">Link ini mungkin sudah berubah. Kembali ke overview atau pakai pencarian.</p><a class="cta" href="#">Ke overview</a>';
+  else $('#content').innerHTML = '<h1>Guide not found.</h1><p class="lead">This link may have changed. Return to the overview or use search.</p><a class="cta" href="#">Back to overview</a>';
   const c = $('#content');
   c.classList.remove('enter'); void c.offsetWidth; c.classList.add('enter');
   reveal();
@@ -117,9 +117,9 @@ function render() {
 
 function results() {
   const q = $('#query').value.trim().toLocaleLowerCase();
-  const all = [{ id: FLOW_ID, title: 'Cara kerja GameSpace', description: 'Peta interaktif: jari, plugin, proses istimewa, game.', sections: [{ title: '', paragraphs: ['cara kerja arsitektur peta alur sinyal aidl root shizuku keymap macro'] }] }, ...guides];
+  const all = [{ id: FLOW_ID, title: 'How GameSpace works', description: 'An interactive map of fingers, plugins, privileged processes and games.', sections: [{ title: '', paragraphs: ['how it works architecture map flow signal aidl root shizuku keymap macro'] }] }, ...guides];
   const list = q ? all.filter(a => (a.title + ' ' + a.description + ' ' + a.sections.flatMap(s => [s.title, ...s.paragraphs]).join(' ')).toLocaleLowerCase().includes(q)) : all.slice(0, 6);
-  $('#results').innerHTML = list.length ? list.map(a => `<a href="#${a.id}">${esc(a.title)}<small>${esc(a.description)}</small></a>`).join('') : '<div class="empty">Tidak ditemukan. Coba “musik”, “izin”, atau “overlay”.</div>';
+  $('#results').innerHTML = list.length ? list.map(a => `<a href="#${a.id}">${esc(a.title)}<small>${esc(a.description)}</small></a>`).join('') : '<div class="empty">No results. Try “music”, “permissions” or “overlay”.</div>';
   $('#results').querySelectorAll('a').forEach(l => l.onclick = () => $('#search-dialog').close());
 }
 
@@ -173,5 +173,5 @@ try {
   $('#navigation').innerHTML = [...new Set(guides.map(a => a.group))].map(g => `<h3>${esc(g)}</h3>${guides.filter(a => a.group === g).map(a => `<a href="#${a.id}">${esc(a.title)}</a>`).join('')}`).join('');
   render();
 } catch {
-  $('#content').innerHTML = '<h1>Dokumentasi belum termuat.</h1><p class="lead">Buka website lewat server HTTP atau GitHub Pages. Browser bisa memblokir data saat kamu membuka index.html langsung dari file.</p><a class="cta" href="README.md">Buka panduan Markdown →</a>';
+  $('#content').innerHTML = '<h1>Documentation could not load.</h1><p class="lead">Open the website through an HTTP server or GitHub Pages. Browsers may block data when index.html is opened directly from a file.</p><a class="cta" href="README.md">Open Markdown guides →</a>';
 }

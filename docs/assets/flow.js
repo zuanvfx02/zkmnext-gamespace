@@ -3,48 +3,48 @@
 // ProcessPulse, LegacyNodeJournal, ScoutGuard, ScreenGate.
 
 const LAYERS = [
-  { name: 'Kamu & game', y: 330, r: 160, off: 0.35 },
-  { name: 'Aplikasi', y: 196, r: 250, off: 0.95 },
+  { name: 'You and the game', y: 330, r: 160, off: 0.35 },
+  { name: 'Application', y: 196, r: 250, off: 0.95 },
   { name: 'Plugin', y: 64, r: 300, off: 0.2 },
-  { name: 'Inti', y: -66, r: 215, off: 0.55 },
-  { name: 'Jalur akses', y: -196, r: 245, off: 1.15 },
-  { name: 'Sistem Android', y: -330, r: 225, off: 0.4 }
+  { name: 'Core', y: -66, r: 215, off: 0.55 },
+  { name: 'Access backends', y: -196, r: 245, off: 1.15 },
+  { name: 'Android system', y: -330, r: 225, off: 0.4 }
 ];
 
 // [id, layer, label, description, center]
 const NODES = [
-  ['game', 0, 'Game', 'Game yang sedang kamu mainkan. Setiap sentuhan mapping berakhir di sini.'],
-  ['finger', 0, 'Jari kamu', 'Jari asli di layar. Sesi sentuh bersama tetap meneruskannya ke game bersama jari mapping.'],
-  ['pad', 0, 'Gamepad & tombol', 'Gamepad, keyboard, mouse, atau tombol bahu L/R di HP gaming.'],
+  ['game', 0, 'Game', 'The game you are playing. Every mapped touch ends here.'],
+  ['finger', 0, 'Your fingers', 'Real fingers on the screen. The shared touch session forwards them alongside mapped fingers.'],
+  ['pad', 0, 'Gamepad and buttons', 'Gamepad, keyboard, mouse or a gaming phone\'s L/R shoulder buttons.'],
 
-  ['lobby', 1, 'Lobby', 'Explore, Handheld, dan Gamepad. Tiga tampilan untuk library yang sama.'],
-  ['overlay', 1, 'Overlay', 'Energy Cube dan Compact. Panel berhenti menggambar saat tersembunyi atau saat layar mati.'],
-  ['detector', 1, 'Deteksi game', 'Menerima event proses dari proses istimewa, lalu memulai sesi game tanpa polling.'],
-  ['screengate', 1, 'ScreenGate', 'Sinyal layar nyala/mati untuk seluruh app. Overlay dan sampling FPS menunggu selama layar gelap.'],
+  ['lobby', 1, 'Lobby', 'Explore, Handheld and Gamepad: three interfaces for the same library.'],
+  ['overlay', 1, 'Overlay', 'Energy Cube and Compact. Panels stop drawing when hidden or when the screen is off.'],
+  ['detector', 1, 'Game detection', 'Receives process events from the privileged process and starts game sessions without polling.'],
+  ['screengate', 1, 'ScreenGate', 'App-wide screen on/off signals. Overlays and FPS sampling pause while the screen is dark.'],
 
-  ['keymap', 2, 'Keymap', 'Tombol besar A sampai D meneruskan sentuhan ke titik target di game.'],
-  ['shoulder', 2, 'Shoulder', 'Tombol fisik L/R berubah jadi sentuhan di posisi yang kamu atur.'],
-  ['gravity', 2, 'Gravity X', 'Skema keyboard, mouse, dan gamepad. Setiap layarnya bisa kamu perkecil jadi bubble.'],
-  ['macro', 2, 'Macro', 'Merekam lalu memutar ulang sentuhan. Replay jalan bersama Keymap, Shoulder, dan Gravity X.'],
-  ['scout', 2, 'Scout', 'Lensa zoom. Saat kamu mematikannya, setelan sistem yang diubah Scout kembali seperti semula.'],
-  ['monitor', 2, 'Monitor', 'FPS, suhu, CPU, dan GPU. Di Shizuku/Axeron, pembacaan memakai server GameSpace bila sedang aktif.'],
-  ['modes', 2, 'Eco / Balance / Rise', 'Tiga mode dengan nilai tetap untuk CPU, GPU, memori, dan scheduler.'],
+  ['keymap', 2, 'Keymap', 'Large A–D buttons forward touches to target points in the game.'],
+  ['shoulder', 2, 'Shoulder', 'Physical L/R buttons become touches at your configured positions.'],
+  ['gravity', 2, 'Gravity X', 'Keyboard, mouse and gamepad schemes. Each screen can minimize into a bubble.'],
+  ['macro', 2, 'Macro', 'Records and replays touches. Playback works alongside Keymap, Shoulder and Gravity X.'],
+  ['scout', 2, 'Scout', 'A zoom lens. Disabling it restores the system settings changed by Scout.'],
+  ['monitor', 2, 'Monitor', 'FPS, temperature, CPU and GPU. Shizuku/Axeron readers use the GameSpace server when active.'],
+  ['modes', 2, 'Eco / Balance / Rise', 'Three modes with fixed CPU, GPU, memory and scheduler values.'],
 
-  ['ipc', 3, 'AIDL IRootService', 'Kontrak IPC antara app dan proses istimewa, protokol 10. Root dan Shizuku memakai stub yang sama.', true],
-  ['lanes', 3, 'Sesi sentuh bersama', 'KeymapInjector memberi lease ke tiap plugin. TouchLanes memetakan id jari lokal ke 32 jalur fisik.'],
-  ['journal', 3, 'Jurnal node', 'LegacyNodeJournal mencatat nilai asli sebelum menulis dan memulihkannya saat sesi selesai.'],
-  ['guard', 3, 'ScoutGuard', 'Mencatat setelan yang diubah Scout dan menitipkan skrip pemulihan ke proses istimewa.'],
+  ['ipc', 3, 'AIDL IRootService', 'IPC contract between the app and privileged process, protocol 10. Root and Shizuku share the same stub.', true],
+  ['lanes', 3, 'Shared touch session', 'KeymapInjector grants each plugin a lease. TouchLanes maps local finger IDs to 32 physical lanes.'],
+  ['journal', 3, 'Node journal', 'LegacyNodeJournal records original values before writes and restores them when the session ends.'],
+  ['guard', 3, 'ScoutGuard', 'Records settings changed by Scout and registers a recovery script with the privileged process.'],
 
-  ['privileged', 4, 'Proses istimewa', 'RootServiceImpl. Satu kode untuk Root dan shell: suntik sentuhan, baca node, jalankan skrip pemulihan.', true],
-  ['root', 4, 'Root · libsu', 'libsu meluncurkan proses root lalu menyerahkan Binder ke app.'],
-  ['shizuku', 4, 'Shizuku', 'Menjalankan server GameSpace sebagai uid shell lewat app_process.'],
-  ['axeron', 4, 'Axeron', 'Jalur shell istimewa lewat backend Axeron.'],
-  ['basic', 4, 'Basic', 'Tanpa akses khusus. Library, tampilan, dan musik tetap jalan.'],
+  ['privileged', 4, 'Privileged process', 'RootServiceImpl. Shared Root/shell code for injecting touches, reading nodes and running recovery scripts.', true],
+  ['root', 4, 'Root · libsu', 'libsu launches the Root process and passes its Binder to the app.'],
+  ['shizuku', 4, 'Shizuku', 'Runs the GameSpace server under the shell UID through app_process.'],
+  ['axeron', 4, 'Axeron', 'Privileged-shell access through the Axeron backend.'],
+  ['basic', 4, 'Basic', 'No privileged access. The library, interface and music remain available.'],
 
-  ['am', 5, 'ActivityManager', 'Proses istimewa mendaftar sebagai observer untuk event game dibuka dan ditutup.'],
-  ['input', 5, 'Input Android', 'Capture panel sentuh dan injeksi multi-touch. Jari asli dan jari mapping jadi satu gesture.'],
-  ['kernel', 5, 'Kernel / sysfs', 'Node CPU, GPU, scheduler, dan thermal yang memang diekspos perangkat.'],
-  ['settings', 5, 'Setelan sistem', 'Settings.Secure dan Global, misalnya setelan pembesaran dan daftar service aksesibilitas.']
+  ['am', 5, 'ActivityManager', 'The privileged process registers an observer for game-open and game-close events.'],
+  ['input', 5, 'Android input', 'Touchscreen capture and multi-touch injection. Real and mapped fingers form one gesture.'],
+  ['kernel', 5, 'Kernel / sysfs', 'CPU, GPU, scheduler and thermal nodes actually exposed by the device.'],
+  ['settings', 5, 'System settings', 'Settings.Secure and Global, including magnification settings and the accessibility-service list.']
 ];
 
 const EDGES = [
@@ -59,59 +59,59 @@ const EDGES = [
 ];
 
 const SCENARIOS = [
-  { name: 'Game dibuka', steps: [
-    { say: 'Kamu membuka game. Android memulai prosesnya.', go: [['game', 'am']] },
-    { say: 'ProcessPulse di proses istimewa menerima event itu. Tidak ada polling.', go: [['am', 'privileged']] },
-    { say: 'Event menyeberang ke app lewat Binder oneway.', go: [['privileged', 'ipc']] },
-    { say: 'Deteksi game bangun seketika dan memulai sesi.', go: [['ipc', 'detector']] },
-    { say: 'Panel overlay muncul dan profil game ikut aktif.', go: [['detector', 'overlay'], ['detector', 'modes']] },
-    { say: 'Jurnal mencatat nilai asli setiap node sebelum ada yang ditulis.', go: [['modes', 'journal']] },
-    { say: 'Nilai baru turun ke kernel lewat proses istimewa.', go: [['journal', 'ipc']] },
-    { say: 'Selesai game, jurnal memulihkan nilai asli.', go: [['ipc', 'privileged']] },
-    { say: 'CPU, GPU, dan scheduler kembali seperti sebelum sesi.', go: [['privileged', 'kernel']] }
+  { name: 'Game launched', steps: [
+    { say: 'You open a game. Android starts its process.', go: [['game', 'am']] },
+    { say: 'ProcessPulse receives the event in the privileged process. No polling is needed.', go: [['am', 'privileged']] },
+    { say: 'The event reaches the app through a oneway Binder call.', go: [['privileged', 'ipc']] },
+    { say: 'Game detection wakes immediately and starts a session.', go: [['ipc', 'detector']] },
+    { say: 'The overlay appears and the game profile becomes active.', go: [['detector', 'overlay'], ['detector', 'modes']] },
+    { say: 'The journal records every node\'s original value before any writes.', go: [['modes', 'journal']] },
+    { say: 'New values reach the kernel through the privileged process.', go: [['journal', 'ipc']] },
+    { say: 'When the game ends, the journal restores original values.', go: [['ipc', 'privileged']] },
+    { say: 'CPU, GPU and scheduler settings return to their pre-session values.', go: [['privileged', 'kernel']] }
   ] },
-  { name: 'Tekan Keymap', steps: [
-    { say: 'Jarimu menekan tombol besar A.', go: [['finger', 'keymap']] },
-    { say: 'Keymap memakai lease-nya. Id jari lokal 0 mendapat jalur fisik yang masih bebas.', go: [['keymap', 'lanes']] },
-    { say: 'Satu frame multi-touch berangkat lewat AIDL.', go: [['lanes', 'ipc']] },
-    { say: 'Proses istimewa menerima frame itu.', go: [['ipc', 'privileged']] },
-    { say: 'Jari asli dan jari mapping digabung jadi satu gesture.', go: [['privileged', 'input']] },
-    { say: 'Game menerima sentuhan di titik target a.', go: [['input', 'game']] }
+  { name: 'Press Keymap', steps: [
+    { say: 'Your finger presses the large A button.', go: [['finger', 'keymap']] },
+    { say: 'Keymap uses its lease. Local finger ID 0 receives an available physical lane.', go: [['keymap', 'lanes']] },
+    { say: 'One multi-touch frame travels through AIDL.', go: [['lanes', 'ipc']] },
+    { say: 'The privileged process receives the frame.', go: [['ipc', 'privileged']] },
+    { say: 'Real and mapped fingers are combined into one gesture.', go: [['privileged', 'input']] },
+    { say: 'The game receives a touch at target point A.', go: [['input', 'game']] }
   ] },
   { name: 'Keymap + Macro', steps: [
-    { say: 'Macro sedang diputar, lalu kamu menekan tombol Keymap.', go: [['overlay', 'macro'], ['finger', 'keymap']] },
-    { say: 'Dua lease di satu sesi. TouchLanes memberi id fisik berbeda, jadi jari tidak bertabrakan.', go: [['macro', 'lanes'], ['keymap', 'lanes']] },
-    { say: 'Kedua jari ikut frame yang sama.', go: [['lanes', 'ipc']] },
-    { say: 'Proses istimewa tidak perlu membuka sesi baru.', go: [['ipc', 'privileged']] },
-    { say: 'Satu gesture berisi dua jari virtual dan jari aslimu.', go: [['privileged', 'input']] },
-    { say: 'Game menerima keduanya. Mematikan Macro tidak menghentikan Keymap.', go: [['input', 'game']] }
+    { say: 'A macro is playing when you press a Keymap button.', go: [['overlay', 'macro'], ['finger', 'keymap']] },
+    { say: 'Two leases share one session. TouchLanes assigns distinct physical IDs to prevent collisions.', go: [['macro', 'lanes'], ['keymap', 'lanes']] },
+    { say: 'Both fingers travel in the same frame.', go: [['lanes', 'ipc']] },
+    { say: 'The privileged process does not need another session.', go: [['ipc', 'privileged']] },
+    { say: 'One gesture contains two virtual fingers and your real fingers.', go: [['privileged', 'input']] },
+    { say: 'The game receives both. Stopping Macro does not stop Keymap.', go: [['input', 'game']] }
   ] },
   { name: 'Gravity X', steps: [
-    { say: 'Kamu menggerakkan stik gamepad.', go: [['pad', 'gravity']] },
-    { say: 'Gravity X menerjemahkan stik jadi geseran di joystick game.', go: [['gravity', 'lanes']] },
-    { say: 'Lease GRAVITY memakai jalurnya sendiri.', go: [['lanes', 'ipc']] },
-    { say: 'Frame dikirim ke proses istimewa.', go: [['ipc', 'privileged']] },
-    { say: 'Injeksi multi-touch.', go: [['privileged', 'input']] },
-    { say: 'Karaktermu bergerak.', go: [['input', 'game']] }
+    { say: 'You move the gamepad stick.', go: [['pad', 'gravity']] },
+    { say: 'Gravity X translates stick movement into a swipe on the game\'s joystick.', go: [['gravity', 'lanes']] },
+    { say: 'The GRAVITY lease uses its own lanes.', go: [['lanes', 'ipc']] },
+    { say: 'The frame is sent to the privileged process.', go: [['ipc', 'privileged']] },
+    { say: 'Multi-touch injection.', go: [['privileged', 'input']] },
+    { say: 'Your character moves.', go: [['input', 'game']] }
   ] },
-  { name: 'Mode Rise', steps: [
-    { say: 'Kamu memilih Rise di panel.', go: [['finger', 'overlay']] },
-    { say: 'Panel meneruskan pilihan ke mesin mode.', go: [['overlay', 'modes']] },
-    { say: 'Nilai asli dicatat dulu di jurnal.', go: [['modes', 'journal']] },
-    { say: 'Rencana tulis menyeberang lewat AIDL.', go: [['journal', 'ipc']] },
-    { say: 'Proses istimewa menjalankannya.', go: [['ipc', 'privileged']] },
-    { say: 'CPU, GPU, dan memori memakai nilai Rise. Node yang dikunci module dilewati.', go: [['privileged', 'kernel']] }
+  { name: 'Rise mode', steps: [
+    { say: 'You choose Rise in the panel.', go: [['finger', 'overlay']] },
+    { say: 'The panel forwards your selection to the mode engine.', go: [['overlay', 'modes']] },
+    { say: 'Original values are recorded in the journal first.', go: [['modes', 'journal']] },
+    { say: 'The write plan travels through AIDL.', go: [['journal', 'ipc']] },
+    { say: 'The privileged process executes it.', go: [['ipc', 'privileged']] },
+    { say: 'CPU, GPU and memory use Rise values. Nodes locked by a module are skipped.', go: [['privileged', 'kernel']] }
   ] },
-  { name: 'App dipaksa berhenti', steps: [
-    { say: 'Scout aktif. ScoutGuard mencatat setelan asli.', go: [['overlay', 'scout'], ['scout', 'guard']] },
-    { say: 'Skrip pemulihan dititipkan ke proses istimewa (armCleanup).', go: [['guard', 'ipc']] },
-    { say: 'Proses istimewa memegang skrip dan memantau Binder app.', go: [['ipc', 'privileged']] },
-    { say: 'Kamu memaksa berhenti GameSpace. Binder app mati.', go: [], kill: true, wait: 1400 },
-    { say: 'Proses istimewa menjalankan skrip: lensa tertutup, setelan pembesaran pulih.', go: [['privileged', 'settings']] }
+  { name: 'App force-stopped', steps: [
+    { say: 'Scout is active. ScoutGuard records the original settings.', go: [['overlay', 'scout'], ['scout', 'guard']] },
+    { say: 'A recovery script is registered with the privileged process (armCleanup).', go: [['guard', 'ipc']] },
+    { say: 'The privileged process holds the script and monitors the app\'s Binder.', go: [['ipc', 'privileged']] },
+    { say: 'You force-stop GameSpace. The app\'s Binder dies.', go: [], kill: true, wait: 1400 },
+    { say: 'The privileged process runs the script: the lens closes and magnification settings are restored.', go: [['privileged', 'settings']] }
   ] },
-  { name: 'Layar mati', steps: [
-    { say: 'Layar mati. ScreenGate memberi tahu semua overlay.', go: [['screengate', 'overlay'], ['screengate', 'monitor']] },
-    { say: 'Overlay turun ke status CREATED dan berhenti menggambar. Sampling FPS menunggu layar nyala.', go: [], dim: ['overlay', 'monitor'], wait: 2200 }
+  { name: 'Screen off', steps: [
+    { say: 'The screen turns off. ScreenGate notifies every overlay.', go: [['screengate', 'overlay'], ['screengate', 'monitor']] },
+    { say: 'Overlays enter CREATED state and stop drawing. FPS sampling waits for the screen to turn on.', go: [], dim: ['overlay', 'monitor'], wait: 2200 }
   ] }
 ];
 
@@ -145,17 +145,17 @@ export function mountFlow(root) {
   root.innerHTML = `
 <div class="flow">
   <div class="flow-bar">
-    <div class="flow-chips" role="group" aria-label="Pilih alur">${SCENARIOS.map((s, i) => `<button data-sc="${i}" aria-pressed="false">${s.name}</button>`).join('')}</div>
-    <button class="flow-auto" aria-pressed="true" title="Putar alur bergantian">▶ Otomatis</button>
+    <div class="flow-chips" role="group" aria-label="Choose a flow">${SCENARIOS.map((s, i) => `<button data-sc="${i}" aria-pressed="false">${s.name}</button>`).join('')}</div>
+    <button class="flow-auto" aria-pressed="true" title="Cycle through flows">▶ Automatic</button>
   </div>
   <div class="flow-stage">
-    <canvas role="img" aria-label="Peta 3D cara kerja ZKMNEXT GameSpace: enam lapisan dari jari dan game sampai sistem Android, dengan sinyal yang bergerak di antara komponen."></canvas>
+    <canvas role="img" aria-label="A 3D map of ZKMNEXT GameSpace: six layers from fingers and games to the Android system, with signals moving between components."></canvas>
     <ol class="flow-legend" aria-hidden="true">${LAYERS.map((L, i) => `<li style="--c:var(--l${i})"><i></i>${L.name}</li>`).join('')}</ol>
     <div class="flow-card" hidden></div>
-    <p class="flow-hint">Geser untuk memutar · ketuk titik untuk detail</p>
+    <p class="flow-hint">Drag to rotate · select a node for details</p>
   </div>
-  <div class="flow-steps" aria-live="polite"><b>Pilih alur</b><span>Atau biarkan berputar otomatis.</span></div>
-  <details class="flow-text"><summary>Versi teks semua komponen</summary>${LAYERS.map((L, li) => `<h3>${L.name}</h3><ul>${Object.values(byId).filter(n => n.layer === li).map(n => `<li><b>${n.label}</b>: ${n.desc}</li>`).join('')}</ul>`).join('')}</details>
+  <div class="flow-steps" aria-live="polite"><b>Choose a flow</b><span>Or let the flows play automatically.</span></div>
+  <details class="flow-text"><summary>Text version of all components</summary>${LAYERS.map((L, li) => `<h3>${L.name}</h3><ul>${Object.values(byId).filter(n => n.layer === li).map(n => `<li><b>${n.label}</b>: ${n.desc}</li>`).join('')}</ul>`).join('')}</details>
 </div>`;
 
   const stage = root.querySelector('.flow-stage');
@@ -231,7 +231,7 @@ export function mountFlow(root) {
   function setPressed() {
     root.querySelectorAll('[data-sc]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.sc === sc)));
     autoBtn.setAttribute('aria-pressed', String(auto));
-    autoBtn.textContent = auto ? '▶ Otomatis' : '❚❚ Manual';
+    autoBtn.textContent = auto ? '▶ Automatic' : '❚❚ Manual';
   }
   function showStep() {
     const s = SCENARIOS[sc], st = s.steps[stepIdx];
@@ -275,7 +275,7 @@ export function mountFlow(root) {
     selected = n;
     if (!n) { card.hidden = true; return; }
     const related = SCENARIOS.map((s, i) => [s, i]).filter(([s]) => s.steps.some(st => st.go.some(([a, b]) => a === n.id || b === n.id)));
-    card.innerHTML = `<button class="flow-x" aria-label="Tutup">×</button><span class="flow-tag" style="--c:var(--l${n.layer})">${LAYERS[n.layer].name}</span><h3>${n.label}</h3><p>${n.desc}</p>${related.length ? `<div class="flow-rel">${related.map(([s, i]) => `<button data-run="${i}">▶ ${s.name}</button>`).join('')}</div>` : ''}`;
+    card.innerHTML = `<button class="flow-x" aria-label="Close">×</button><span class="flow-tag" style="--c:var(--l${n.layer})">${LAYERS[n.layer].name}</span><h3>${n.label}</h3><p>${n.desc}</p>${related.length ? `<div class="flow-rel">${related.map(([s, i]) => `<button data-run="${i}">▶ ${s.name}</button>`).join('')}</div>` : ''}`;
     card.hidden = false;
     card.querySelector('.flow-x').onclick = () => select(null);
     card.querySelectorAll('[data-run]').forEach(b => b.onclick = () => { auto = false; start(+b.dataset.run); });
