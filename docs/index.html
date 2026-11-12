@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090a0c">
+  <meta name="description" content="Kenali perangkatmu. Bangun ruang bermainmu. Dokumentasi ZKMNEXT GameSpace untuk Explore, Handheld, Gamepad, Energy Cube dan kontrol Android.">
+  <meta property="og:title" content="ZKMNEXT GameSpace · Your game. Your space.">
+  <meta property="og:description" content="Panduan pemain dan developer: mulai dari game pertama, lalu jelajahi seluruh ruang bermainmu.">
+  <title>ZKMNEXT GameSpace · Docs</title>
+  <link rel="icon" href="assets/brand.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/expressive.css">
+  <link rel="preload" href="assets/energy-scene.svg" as="image" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip" href="#main">Lewati navigasi</a>
+  <header>
+    <button class="icon mobile" id="menu" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false">☰</button>
+    <a class="brand" href="#" aria-label="ZKMNEXT GameSpace, halaman awal"><img src="assets/brand.svg" alt="" width="34" height="34"><span>ZKMNEXT<small>GAME SPACE / DOCS</small></span></a>
+    <span class="version">ZE2 v43f</span>
+    <nav class="header-nav" aria-label="Navigasi utama"><a href="#start">Documentation</a><a href="#whatsnew">What's new</a><a href="https://t.me/ZUANVFXPROJECT3" target="_blank" rel="noopener noreferrer">Community ↗</a></nav>
+    <div class="header-actions"><button id="search" aria-label="Cari dokumentasi">⌕ <span>Cari panduan</span><kbd>Ctrl K</kbd></button><button class="icon" id="theme" aria-label="Ganti tema">◐</button></div>
+  </header>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <div class="backdrop" id="backdrop"></div>
+  <div class="layout">
+    <aside id="sidebar" aria-label="Navigasi dokumentasi">
+      <a class="overview" href="#">⌂ Overview</a><a class="overview flow-link" href="#cara-kerja">◎ Cara kerja</a>
+      <nav id="navigation" aria-label="Semua panduan"></nav>
+      <div class="side-note"><span class="dot"></span> SOURCE DOCUMENTATION<p>ZE2 v43f · Expressive<br>Android 10+ · by zuanvfx02</p><div class="side-links"><a href="https://t.me/ZUANVFXPROJECT3" target="_blank" rel="noopener noreferrer">Telegram resmi ↗</a><a href="https://t.me/zuanvfx01project3chat" target="_blank" rel="noopener noreferrer">Grup diskusi ↗</a><a href="https://sociabuzz.com/zuanvfx01/tribe" target="_blank" rel="noopener noreferrer">Dukung GameSpace ↗</a></div></div>
+    </aside>
+    <main id="main" tabindex="-1">
+      <div id="content" aria-live="polite"></div>
+      <noscript><div class="noscript"><h1>ZKMNEXT GameSpace Docs</h1><p>Aktifkan JavaScript untuk pencarian dan panduan interaktif, atau baca <a href="README.md">indeks Markdown</a> dan <a href="expressive-experience.md">panduan Expressive</a>.</p></div></noscript>
+      <footer><img src="assets/brand.svg" width="25" height="25" alt=""><span>ZKMNEXT / zuanvfx02<br><small>GAME SPACE DOCUMENTATION · Dukungan fitur mengikuti perangkat.</small></span><a href="#cara-kerja">Cara kerja</a><a href="#whatsnew">Pembaruan</a><a href="https://t.me/ZUANVFXPROJECT3" target="_blank" rel="noopener noreferrer">Komunitas ↗</a><a href="#build">Developer</a><a href="#privacy">Privasi</a></footer>
+    </main>
+    <aside id="toc" aria-label="Di halaman ini"></aside>
+  </div>
+  <dialog id="search-dialog" aria-label="Cari dokumentasi">
+    <div class="search-head"><input id="query" type="search" placeholder="Cari: intro, Energy Cube, izin…" aria-label="Kata pencarian" autocomplete="off"><button class="icon" id="close-search" aria-label="Tutup pencarian">×</button></div>
+    <div id="results"></div><p class="search-tip">Pencarian lokal · Ctrl / ⌘ K untuk membuka · Esc untuk menutup</p>
+  </dialog>
+  <script type="module" src="assets/app.js"></script>
+</body>
+</html>
