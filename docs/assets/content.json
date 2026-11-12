@@ -1,0 +1,710 @@
+[
+ {
+  "id": "start",
+  "title": "Mulai di sini",
+  "description": "Siapkan game pertama dan pilih pengalaman bermainmu.",
+  "group": "Mulai",
+  "sections": [
+   {
+    "title": "Tentang ZKMNEXT",
+    "paragraphs": [
+     "ZKMNEXT GameSpace adalah launcher game, monitor perangkat, dan kontrol overlay Android. Identitas proyek: ZKMNEXT · zuanvfx02. Source ZE2 v43f mempertahankan Explore dan menambahkan pengalaman Expressive.",
+     "Fitur dijalankan di perangkat. Tidak perlu akun GameSpace. Dukungan kontrol sistem bergantung pada Android, ROM, chipset, kernel, dan akses yang diberikan."
+    ]
+   },
+   {
+    "title": "Tiga langkah pertama",
+    "paragraphs": [
+     "1. Pasang APK dari sumber yang kamu percaya, lalu buka GameSpace. Persyaratan minimum adalah Android 10 / API 29.",
+     "Selesaikan intro, lalu ikuti tur Explore untuk mencoba library, kontrol, monitor dan Settings. Kamu dapat melewati atau mengulang tur lewat Settings > Troubleshooting.",
+     "2. Tambahkan game ke library. Pilih Explore untuk dashboard, Handheld untuk lobby landscape, atau Gamepad untuk navigasi controller.",
+     "3. Buka pengaturan akses. Berikan izin hanya untuk fitur yang ingin digunakan, lalu mulai game dari library."
+    ]
+   },
+   {
+    "title": "Sebelum mencoba tuning",
+    "paragraphs": [
+     "Mulai dengan Basic dan profil Balance. Pastikan deteksi game dan overlay bekerja sebelum mengaktifkan kontrol kernel atau charging.",
+     "Jangan menganggap label fitur tersedia berarti perangkat pasti mendukungnya. Perhatikan hasil compatibility test dan pesan operasi."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "expressive",
+  "title": "Expressive experience",
+  "description": "Intro yang lebih hidup, tur Explore pertama dan Energy Cube yang lebih terukur.",
+  "group": "Mulai",
+  "sections": [
+   {
+    "title": "Intro yang tetap familiar",
+    "paragraphs": [
+     "Identitas ZKMNEXT dan Game Space tetap menjadi pusat intro. Emblem kubus vektor masuk bertahap, halaman berpindah mengikuti arah Next / Back, dan indikator langkah bertransisi lembut. Semua pilihan akses, izin dan privasi yang sudah ada tetap tersedia.",
+     "Animasi tambahan diam saat animasi sistem dimatikan atau perangkat memakai mode hemat baterai. Pengguna lama tidak dipaksa mengulang setup."
+    ]
+   },
+   {
+    "title": "Coba tur Explore",
+    "paragraphs": [
+     "Setelah setup pertama, ikuti kartu tur di bawah layar. Next membawa kamu ke Home, App list, Customization, Monitoring dan Settings yang sebenarnya. Add a game membuka pemilih game asli.",
+     "Kartu mempunyai ruang sendiri agar tidak menutupi kontrol halaman. Pilih Back untuk mundur atau tombol tutup untuk melewati. Posisi tersimpan dan selesai tur kembali ke Home.",
+     "Untuk mengulang, buka Settings > Troubleshooting > Replay Explore tour. Tur tidak menyalakan akses Root, shell atau izin perangkat secara otomatis."
+    ]
+   },
+   {
+    "title": "Energy Cube dengan anggaran gambar",
+    "paragraphs": [
+     "Gambar dekoratif Energy Cube dan v2 dibatasi maksimum 60 fps; perangkat MID dan LITE tetap 30 fps. Energy Cube v2 menggabungkan clock scene dan pengamatan frame lambat serta menyimpan pengukuran teks sampai teks berubah.",
+     "Ambient Explore berhenti ketika halaman tidak terlihat. Batas gambar UI membantu mengurangi pekerjaan yang berulang; perubahan ini tidak menjanjikan peningkatan FPS game."
+    ]
+   },
+   {
+    "title": "Dokumentasi untuk sesi berikutnya",
+    "paragraphs": [
+     "Temukan panduan dari halaman awal, bandingkan tiga mode dan ikuti alur sistem lewat peta interaktif. Pencarian bekerja lokal di browser, dengan Ctrl atau Command K.",
+     "Daftar isi artikel tersedia pada layar kecil, dan tombol Salin tautan bisa dipakai untuk membagikan halaman yang sedang dibaca. Tema dan reduced motion mengikuti pilihan perangkat."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "whatsnew",
+  "title": "Yang baru di ZE2 v43f",
+  "description": "Intro Expressive, tur Explore pertama, optimasi Energy Cube dan website docs baru.",
+  "group": "Mulai",
+  "sections": [
+   {
+    "title": "Pengalaman Expressive",
+    "paragraphs": [
+     "Intro tetap memakai identitas ZKMNEXT dengan emblem Energy Cube vektor, transisi berlapis dan indikator langkah yang bergerak. Tur Explore membuka halaman nyata aplikasi dan dapat diulang dari Troubleshooting.",
+     "Energy Cube membatasi frame dekoratif, dan v2 menyimpan pengukuran teks serta memakai satu clock frame. Website docs menghadirkan landing baru, tab mode dengan dukungan keyboard, dan pengalaman membaca yang lebih rapi."
+    ]
+   },
+   {
+    "title": "Plugin input jalan barengan",
+    "paragraphs": [
+     "Keymap, Shoulder Triggers, Gravity X, dan replay Macro berbagi satu sesi sentuh. Tiap plugin memegang lease sendiri, jadi kamu bisa mematikan satu plugin tanpa menghentikan yang lain.",
+     "TouchLanes memisahkan id jari tiap plugin ke 32 jalur fisik. Tombol Keymap dan jari Macro tidak lagi saling menimpa.",
+     "Merekam macro tetap butuh layar sentuh mentah. Kalau mapper sedang memegang layar, GameSpace menampilkan pesan dan tidak merekam data kosong. Sensitivity wheel juga belum bisa jalan bersama touch mapping."
+    ]
+   },
+   {
+    "title": "Scout mati total",
+    "paragraphs": [
+     "ScoutGuard mencatat setiap setelan sistem sebelum Scout mengubahnya. GameSpace memulihkannya saat kamu mematikan Scout dan saat kamu membuka app lagi.",
+     "Kalau kamu memaksa berhenti app, proses Root atau server shell menjalankan skrip pemulihan yang sudah ScoutGuard titipkan.",
+     "Service aksesibilitas yang kamu nyalakan sendiri tetap menyala. GameSpace hanya melepas service yang Scout nyalakan lewat Root atau Shizuku."
+    ]
+   },
+   {
+    "title": "Gravity X lebih rapi",
+    "paragraphs": [
+     "Setiap layar Gravity X punya tombol Minimize. Window mengecil jadi bubble yang bisa kamu geser, sementara sentuhan dan tombol gamepad tetap masuk ke game.",
+     "Kamu bisa menggeser toolbar editor lewat pegangan di kiri atau menciutkannya jadi satu baris. Tombol mapping tampil di atas toolbar, jadi tombol di bawahnya tetap bisa kamu pegang."
+    ]
+   },
+   {
+    "title": "Overlay lebih hemat",
+    "paragraphs": [
+     "Overlay yang tersembunyi berhenti menggambar. Saat layar mati, sampling FPS dan telemetry ikut menunggu.",
+     "Overlay jalur macro hanya beranimasi saat macro diputar. Di mode Shizuku atau Axeron, pembacaan sensor memakai server GameSpace bila server itu sedang aktif.",
+     "Ini perubahan source. Coba dulu di perangkatmu, karena hasilnya tetap bergantung pada Android, ROM, dan akses."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "access",
+  "title": "Akses & izin",
+  "description": "Basic, Shizuku/Axeron, dan Root punya kemampuan berbeda.",
+  "group": "Mulai",
+  "sections": [
+   {
+    "title": "Pilih tingkat akses",
+    "paragraphs": [
+     "Basic: library, statistik, profil, pemutar musik, dan fitur UI. Overlay tetap memerlukan izin tampil di atas aplikasi lain.",
+     "Shizuku / Axeron: perintah shell sesuai UID layanan. Layanan berbasis ADB tidak otomatis memiliki hak Root.",
+     "Root: memungkinkan kontrol kernel yang diekspos perangkat. Root tidak menciptakan node charging, fan, atau governor yang tidak tersedia."
+    ]
+   },
+   {
+    "title": "Izin berdasarkan kebutuhan",
+    "paragraphs": [
+     "Usage access: mendeteksi game aktif dan menghitung playtime. Overlay: panel, FPS, crosshair, dan area anti-mistouch. Notifikasi biasa: foreground service dan tombol kontrol.",
+     "Notification access: Barrage, popup panggilan yang didukung, serta Device Auto music. Kamu bisa menonaktifkan Barrage tanpa mematikan Device Auto.",
+     "DND access: mengubah mode gangguan. Accessibility dipakai fitur magnification yang didukung; ini berbeda dari izin Root/ADB. Akses file musik diberikan lewat pemilih dokumen."
+    ]
+   },
+   {
+    "title": "Jika akses tidak tersambung",
+    "paragraphs": [
+     "Mulai layanan Shizuku/Axeron dan berikan izin ke GameSpace. Pilih backend yang benar, periksa UID/status, lalu jalankan compatibility test lagi.",
+     "Setelah restart perangkat, akses ADB bisa perlu diaktifkan lagi. Pengecualian optimasi baterai membantu menjaga service, tetapi perilaku tiap ROM berbeda."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "explore",
+  "title": "Explore: Material 3 Expressive",
+  "description": "Five focused destinations and one direct tuning dashboard.",
+  "group": "Mulai",
+  "sections": [
+   {
+    "title": "Five destinations",
+    "paragraphs": [
+     "Home, Apps, Customization, Monitor and Settings retain their latest structure. Home, library and monitoring layouts are preserved."
+    ]
+   },
+   {
+    "title": "Compact customization",
+    "paragraphs": [
+     "Performance profile and boost, paired Refresh rate and Render engine tiles, then grouped rows for additional tuning, focus, power/temperature and session extras. Simple values use selection dialogs. Complex controls open a direct one-step editor with the matching appbar title and Back action. Default and per-game tuning keep their existing stores."
+    ]
+   },
+   {
+    "title": "Mode separation",
+    "paragraphs": [
+     "Console-only features remain in Handheld. Virtual-floating enablement stays on the overview and its report/test has one diagnostic detail. Game icon wallpaper remains retired. Imported wallpapers, existing feature engines and user data are preserved."
+    ]
+   },
+   {
+    "title": "Expressive, quieter styling",
+    "paragraphs": [
+     "v8.46 uses Material 3 1.5.0-beta02, released 21 October 2026 (stable remains 1.4.0). Explore has its own expressive theme/motion, native interactive and checked settings lists, connected profile/Monitor choices and shape-morphing navigation/Apps controls. Home is more restrained, with a solid tonal banner and quieter default surfaces. Existing features, navigation and stores are retained."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "modes",
+  "title": "Explore, Handheld & Gamepad",
+  "description": "Satu library dengan tiga cara navigasi.",
+  "group": "Pengalaman",
+  "sections": [
+   {
+    "title": "Explore",
+    "paragraphs": [
+     "Explore kini memakai lima tab: Home, Apps, Customization, Monitor dan Settings. Home berisi status, profil ringkas dan game terakhir; pengaturan gaming dikelompokkan di Customization. Ultra Smooth tetap terlihat di Settings.",
+     "Search menuju halaman pengaturan yang sama. Profil per aplikasi dan transfer profil tetap dapat dikelola dari Apps."
+    ]
+   },
+   {
+    "title": "Handheld",
+    "paragraphs": [
+     "Lobby landscape menampilkan library game, kontrol cepat, wallpaper, dekorasi, dan profil. Tambah game, pilih game, kemudian Start.",
+     "Floating Wallpaper dapat dimatikan atau memakai Orbit, Starflight, Alien, dan Crystal. Backdrop, partikel, vignette, dan gambar pribadi diatur terpisah."
+    ]
+   },
+   {
+    "title": "Gamepad",
+    "paragraphs": [
+     "Mode console memakai input controller, fokus yang terlihat, dan petunjuk tombol. Bentuk glyph mengikuti controller yang dikenali; mapping sebenarnya perlu diuji pada controller kamu.",
+     "Gunakan arah/stick untuk navigasi dan tombol sesuai legend untuk memilih atau kembali. Pairing/input device tetap dikelola Android."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "overlays",
+  "title": "Overlay dalam game",
+  "description": "Pilih panel yang cocok untuk layar dan kebiasaanmu.",
+  "group": "Pengalaman",
+  "sections": [
+   {
+    "title": "Energy Cube",
+    "paragraphs": [
+     "Panel dua sisi menampilkan telemetry dan kontrol. Versi v8.26 membatasi viewport dari lebar sekaligus tinggi, mempertahankan proporsi, dan memusatkan panel secara vertikal pada rasio lebih kotak.",
+     "Layar 4:3/16:10 bisa memiliki ruang kosong di atas dan bawah panel. Ini disengaja agar kedua sisi tidak saling menekan. Perubahan layout belum diverifikasi lewat perangkat tablet."
+    ]
+   },
+   {
+    "title": "Compact",
+    "paragraphs": [
+     "Panel samping dengan rail vertikal yang dapat digulir. Home berisi telemetry dan mini player. Menu memisahkan Perform, Display, Charging, Connect, Aim, Tools, Kernel, Widgets, dan Apps.",
+     "Perform: Actions/Auto dan preload. Display: Screen/Render/Color. Charging: bypass dan setup perangkat. Kernel: CPU/GPU/scheduler serta kontrol lanjutan.",
+     "Warna mengikuti profil Energy Cube: Balance hijau, Rise merah, Eco cyan. Ukuran memperhitungkan padding, handle, dan ruang window; posisi vertikal dibatasi berdasarkan tinggi panel terukur."
+    ]
+   },
+   {
+    "title": "Kontrol dan batas",
+    "paragraphs": [
+     "Panel, rail, dan halaman yang panjang menggunakan scroll. Atur sisi dock dan ukuran lewat pengaturan. Tutup panel bila menghalangi kontrol game.",
+     "Layar sangat kecil tetap dapat menghasilkan elemen kecil. Batas geometri lolos hitungan tidak sama dengan jaminan keterbacaan, area sentuh, atau bebas benturan gesture sistem."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "performance",
+  "title": "Profil & otomatisasi",
+  "description": "Pahami perbedaan profil CPU dan game boost.",
+  "group": "Tuning",
+  "sections": [
+   {
+    "title": "Eco, Balance, Rise",
+    "paragraphs": [
+     "Eco mengutamakan pembatasan beban sesuai dukungan. Balance adalah titik awal untuk penggunaan biasa. Rise meminta performa lebih tinggi sesuai akses dan kemampuan perangkat.",
+     "Android Game boost adalah kontrol game mode sistem, terpisah dari profil CPU. Sebuah ROM atau game bisa mengabaikan permintaan tersebut. Tidak ada jaminan kenaikan FPS."
+    ]
+   },
+   {
+    "title": "Auto dan thermal",
+    "paragraphs": [
+     "Auto dapat memilih profil saat sesi game dimulai, merespons baterai rendah/screen-off, menurunkan profil saat panas, dan memakai timeout saat game berada di background.",
+     "Adaptive thermal controller membaca sensor yang tersedia dan memakai tahapan penurunan profil serta pemulihan. Nilai sensor berbeda antar perangkat. Hindari mematikan proteksi termal vendor sebagai pengaturan awal."
+    ]
+   },
+   {
+    "title": "Aksi dan preload",
+    "paragraphs": [
+     "RAM clean, cache cleanup, restart game, dan fan memiliki tujuan berbeda. Fan hanya bekerja pada perangkat/kontrol yang didukung.",
+     "Preload membaca file game ke cache sesuai budget. Dampaknya bergantung pada perangkat dan kondisi cache; budget besar tidak menjamin peningkatan performa. Storage maintenance berbeda dari menghapus cached files."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "display",
+  "title": "Display, render & warna",
+  "description": "Atur layar tanpa mencampur pengaturan kernel.",
+  "group": "Tuning",
+  "sections": [
+   {
+    "title": "Cakupan setting",
+    "paragraphs": [
+     "Display dapat disimpan sebagai default semua game atau khusus game yang dipilih. Periksa pilihan Apply settings to sebelum mengubah nilai. Kernel dan charging tidak menjadi per-game hanya karena game dipilih di Display."
+    ]
+   },
+   {
+    "title": "Render dan resolusi",
+    "paragraphs": [
+     "Pilihan render engine, resolution scale, dan FPS target bergantung akses/ROM. HWUI tidak mengatur semua native game engine. Permintaan FPS bukan FPS yang dijamin.",
+     "Beberapa perubahan baru terlihat setelah game dimulai ulang. Gunakan Apply/Restart sesuai petunjuk. Optimize game memakai kompilasi profil; prosesnya dapat memakan waktu."
+    ]
+   },
+   {
+    "title": "Warna",
+    "paragraphs": [
+     "RGB dan saturation tersedia sesuai akses. Reset mengembalikan warna netral lewat jalur yang didukung. Aktifkan penerapan otomatis per-game hanya bila hasilnya sudah diperiksa.",
+     "Eksperimen renderer dan SurfaceFlinger bukan pengaturan universal. Simpan konfigurasi awal dan uji satu perubahan pada satu waktu."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "charging",
+  "title": "Charging & bypass",
+  "description": "Kontrol daya membutuhkan dukungan perangkat nyata.",
+  "group": "Tuning",
+  "sections": [
+   {
+    "title": "Apa yang dimaksud bypass",
+    "paragraphs": [
+     "Perangkat dapat mengekspos switch charging yang berbeda. Mematikan pengisian baterai tidak selalu berarti jalur hardware bypass langsung ke sistem.",
+     "Charging punya menu sendiri. Status kandidat dan hasil scan perlu dibaca; Root saja tidak membuktikan fitur didukung."
+    ]
+   },
+   {
+    "title": "Scan dan pemulihan",
+    "paragraphs": [
+     "Pasang charger dan ikuti syarat baterai. Scan mencoba kandidat kontrol dan memeriksa hasil sesuai implementasi. Ada threshold untuk melepas bypass serta alur cancel/restore.",
+     "Jika pemulihan gagal, hentikan eksperimen, pulihkan akses yang dibutuhkan, dan gunakan tindakan restore sebelum scan berikutnya. Periksa perilaku charger pada perangkat sesungguhnya."
+    ]
+   },
+   {
+    "title": "Batas validasi",
+    "paragraphs": [
+     "Jangan memakai angka arus rendah sebagai bukti tunggal bypass. Pembacaan arus dapat berubah karena suhu, beban, kabel, dan pengendali pengisian.",
+     "Alur charging belum dibuktikan aman pada semua model. Dokumentasi ini menjelaskan perilaku source, bukan sertifikasi hardware."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "kernel",
+  "title": "Kernel & kontrol lanjutan",
+  "description": "Governor, batas frekuensi, dan scheduler per profil.",
+  "group": "Tuning",
+  "sections": [
+   {
+    "title": "Sebelum mengubah",
+    "paragraphs": [
+     "Kernel settings membutuhkan akses yang benar dan node yang dapat ditulis. Gunakan compatibility test; fitur tidak didukung bukan masalah yang bisa diperbaiki dengan menambah izin biasa.",
+     "Pengaturan ini dibagi lintas game sesuai profil. Pilih profil yang sedang diedit dengan sengaja."
+    ]
+   },
+   {
+    "title": "Kontrol yang tersedia",
+    "paragraphs": [
+     "Governor CPU/GPU, CPU max frequency, scheduler/I/O, top-app boost, trace, prioritas, dan opsi khusus chipset hanya muncul atau bekerja sesuai kemampuan yang terdeteksi.",
+     "Editor cluster menyediakan batas minimum/maksimum untuk cluster yang ditemukan. Jangan menyamakan ini dengan FPS target layar."
+    ]
+   },
+   {
+    "title": "Apply dan Undo",
+    "paragraphs": [
+     "Apply now meminta penerapan konfigurasi. Undo/restore memakai data awal yang disimpan. Keberhasilan pemulihan tetap membutuhkan izin dan akses perangkat.",
+     "Opsi lock values dan kontrol thermal eksperimental perlu kehati-hatian. Mulai dari nilai default, lalu ubah satu opsi dan periksa suhu/stabilitas."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "music",
+  "title": "Musik: dua sumber",
+  "description": "Playlist ZKMNEXT dan media yang sedang diputar HP.",
+  "group": "Fitur",
+  "sections": [
+   {
+    "title": "ZKMNEXT playlist",
+    "paragraphs": [
+     "Buka Music, pilih ZKMNEXT, lalu Add audio. Pemilih file dapat mengimpor beberapa file sekaligus. File asli tidak disalin menjadi upload ke server.",
+     "Player menyediakan play/pause/previous/next, seek jika durasi tersedia, stop, loop, dan floating music dot sesuai alur internal. Menghapus dari playlist tidak menghapus file asli."
+    ]
+   },
+   {
+    "title": "Device Auto",
+    "paragraphs": [
+     "Pilih Device Auto lalu berikan notification access bila diminta. Putar musik di aplikasi atau browser yang menyediakan Android MediaSession.",
+     "GameSpace membaca judul, artis, cover bila tersedia, serta status playback. Session yang sedang bermain diprioritaskan. Kontrol mengikuti action yang disediakan aplikasi sumber.",
+     "Tidak semua suara atau website menyediakan session. Tidak terbaca bukan berarti izin mikrofon kurang; fitur ini tidak mengenali lagu lewat rekaman mikrofon."
+    ]
+   },
+   {
+    "title": "Mini player",
+    "paragraphs": [
+     "Mini player Home Compact terletak setelah telemetry. Pilihan sumber dibagikan dengan widget dan halaman Music. Mengganti sumber kontrol tidak otomatis memutar/menghentikan audio aplikasi lain.",
+     "Jika tombol next/previous nonaktif, aplikasi sumber mungkin tidak mendukungnya. Jika metadata kosong, uji session menggunakan kontrol media bawaan Android terlebih dahulu."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "widgets",
+  "title": "Dashboard Widgets",
+  "description": "Pilih ringkasan dan kontrol yang memang kamu butuhkan.",
+  "group": "Fitur",
+  "sections": [
+   {
+    "title": "Susun dashboard",
+    "paragraphs": [
+     "Buka Widgets dan tekan Customize. Pilih kartu, gunakan Up/Down untuk urutan, lalu Done. Pilihan dan urutan disimpan lokal.",
+     "Kartu dapat dibuka-tutup. FPS memakai angka utama, CPU/GPU memakai meter berdampingan, dan kontrol lain dapat diringkas agar panel tidak penuh."
+    ]
+   },
+   {
+    "title": "Kartu yang tersedia",
+    "paragraphs": [
+     "Frame rate, CPU/GPU, Performance, brightness, volume, tools, focus/alerts, monitor, crosshair, color, network, battery/thermal, quick settings, dan now playing.",
+     "Shortcut Performance/Color/Charging mengarah ke kategori konfigurasi terkait, bukan editor ganda. Angka yang tidak tersedia harus dibaca sebagai tidak tersedia, bukan nol performa."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "input",
+  "title": "Controller, macro & aim",
+  "description": "Navigasi console dan tool input saat bermain.",
+  "group": "Fitur",
+  "sections": [
+   {
+    "title": "Controller",
+    "paragraphs": [
+     "Pair controller lewat Android, lalu buka Gamepad mode. GameSpace mengenali perangkat input dan menyediakan legend yang menyesuaikan layout tombol.",
+     "Kompatibilitas navigasi GameSpace tidak menjamin controller didukung oleh game tertentu. Untuk perangkat yang tidak dikenali, cocokkan tombol dengan legend dan uji manual."
+    ]
+   },
+   {
+    "title": "Macro dan tool sentuh",
+    "paragraphs": [
+     "Macro recorder, floating controls, path markers, shoulder trigger, sensitivity wheel, hold/double tap, serta image-match trigger tersedia sesuai izin dan akses.",
+     "Shoulder Triggers, Keymap, Gravity X dan replay Macro memakai sesi sentuh bersama. Capture menggabungkan jari layar dengan mapping; jika tidak tersedia, fallback kernel C++ mencoba slot kosong pada node layar yang sama. Jika ROM menolak keduanya, aktivasi menampilkan alasan dan tidak menjalankan mode yang membatalkan analog. Dukungan kernel bergantung driver dan izin ROM; POCO/Axion Android 16 belum diuji secara fisik. Konfigurasi F1/F2 Shoulder tetap digunakan.",
+     "Replay Macro menjaga satu sesi sepanjang semua putaran, mempertahankan timing hold/drag, dan memiliki kecepatan 0,25–4× di menu Keylink serta tombol floating. Stop menunggu pembersihan kontak. Sejak v25 replay Macro bisa jalan bersamaan dengan Keymap, Shoulder, dan Gravity X. Merekam macro tetap perlu layar sentuh mentah, jadi jeda dulu mapper yang memegang layar saat merekam. Aktifkan alat sebelum menahan analog. Rotasi atau perubahan akses menghentikan replay.",
+     "Tool image-match memakai referensi gambar/area yang kamu pilih; jangan menganggapnya model AI yang memahami game. Rotasi dan resolusi dapat mengubah koordinat.",
+     "Otomatisasi input dapat dilarang oleh game tertentu. Periksa aturan game sebelum mengaktifkan macro."
+    ]
+   },
+   {
+    "title": "Crosshair dan Scout",
+    "paragraphs": [
+     "Crosshair adalah overlay; atur gaya/posisinya tanpa mengubah aset game. Scout memerlukan alur magnification yang didukung Android. Sejak v25, mematikan Scout menutup lensa, memulihkan setelan pembesaran, dan melepas service aksesibilitas yang dinyalakan Scout sendiri, juga setelah app dipaksa berhenti.",
+     "Jika overlay menghalangi tombol, ubah posisi atau matikan. Jangan aktifkan banyak tool input sekaligus saat pertama menguji."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "notifications",
+  "title": "Barrage, fokus & anti-mistouch",
+  "description": "Kontrol gangguan dengan pilihan yang jelas.",
+  "group": "Fitur",
+  "sections": [
+   {
+    "title": "Barrage dan bubble",
+    "paragraphs": [
+     "Berikan notification access, pilih aplikasi sumber, dan aktifkan Barrage. Sepuluh style: Starlight, Neon Pulse, Royal Crest, Cyber HUD, Arcade Pop, Inferno, Frost Byte, Sakura Bloom, Toxic Core, Obsidian.",
+     "Atur speed, position, font, opacity, jumlah karakter, dan quick reply. Pesan panjang dibatasi tiga baris dengan ellipsis. Preview dan notifikasi memakai builder bubble yang sama."
+    ]
+   },
+   {
+    "title": "Fokus dan panggilan",
+    "paragraphs": [
+     "DND, heads-up blocking dan call popup berbeda kontrol. Beberapa operasi membutuhkan DND access atau shell. Quick reply hanya tersedia untuk notifikasi yang menyediakan tindakan reply yang sesuai."
+    ]
+   },
+   {
+    "title": "Edge protection",
+    "paragraphs": [
+     "Area sudut dilihat lewat preview di Game Center → System anti mistouch. Saat bermain, area tersebut transparan tetapi tetap menangkap sentuhan.",
+     "Pilih Small/Medium/Broad Range. Jika tombol game menjadi sulit ditekan, kurangi area atau matikan lewat pengaturan/notifikasi sesi. Gesture navigasi sistem bisa tetap mengambil prioritas."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "appearance",
+  "title": "Wallpaper, dekorasi & profil",
+  "description": "Personalisasi tanpa mencampur akses sistem.",
+  "group": "Fitur",
+  "sections": [
+   {
+    "title": "Wallpaper dan atmosfer",
+    "paragraphs": [
+     "Game space wallpaper berisi backdrop, gambar pribadi, dimming, partikel, vignette, dan Floating Wallpaper. Floating Wallpaper dapat on/off secara terpisah, termasuk di latar AMOLED.",
+     "Orbit mempertahankan planet asli. Starflight menampilkan roket/satelit, Alien memakai saucer/moon, Crystal memakai bentuk kristal. Dekorasi tidak mengambil input sentuh."
+    ]
+   },
+   {
+    "title": "Tema dan profil",
+    "paragraphs": [
+     "Pilihan palette, AMOLED, scale, dan blur mengikuti pengaturan tampilan yang relevan. Compact tetap mengikuti warna profil performa.",
+     "Profil pengguna mendukung avatar, banner, dekorasi, nama, serta statistik yang berasal dari penggunaan lokal. Wallpaper per-game dapat menggunakan artwork bila tersedia."
+    ]
+   },
+   {
+    "title": "Animated wallpaper and rewards · v8.32",
+    "paragraphs": [
+     "Handheld and Gamepad now accept photos, animated GIFs and muted looping videos up to 150 MiB. Choose media in Game space wallpaper. Floating objects animate in both modes.",
+     "Common Android Motion Photos with embedded MP4 metadata are recognized. Other Live Photos require exporting and selecting their video. Actual codec support depends on the device.",
+     "Profiles now have 20 achievements and free reward capsules. Each achievement provides one lifetime ticket and its direct decoration reward. Capsules grant a new permanent collection item with equal probability among remaining capsule items. Rune Circle has been removed."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "monitoring",
+  "title": "Monitoring & service",
+  "description": "Pahami asal angka dan masa hidup sesi.",
+  "group": "Referensi",
+  "sections": [
+   {
+    "title": "Telemetry",
+    "paragraphs": [
+     "CPU/GPU frequency/load, RAM, baterai, thermal, refresh rate, jaringan, dan FPS menggunakan pembaca yang sesuai kemampuan perangkat. GPU load bisa estimasi; baca penandanya.",
+     "Refresh rate layar bukan FPS game. Ping ke 1.1.1.1 adalah indikator koneksi internet, bukan ping server game. Traffic umumnya mencakup seluruh perangkat."
+    ]
+   },
+   {
+    "title": "Service Android",
+    "paragraphs": [
+     "Foreground services menjaga deteksi game, overlay, musik, dan tool yang diaktifkan. Sebagian besar service internal tidak diekspor. Layanan notification/accessibility memakai izin binding Android.",
+     "Saat game ditutup, layar terkunci, service dimatikan, atau akses dicabut, hasilnya perlu mengikuti cleanup/recovery yang tersedia. ROM dapat menghentikan service walau aplikasi sudah meminta pengecualian baterai."
+    ]
+   },
+   {
+    "title": "Status pengujian",
+    "paragraphs": [
+     "Source memuat cleanup, pembatasan sampling, dan recovery. Itu belum membuktikan konsumsi baterai, stabilitas jangka panjang, atau pemulihan pada setiap ROM.",
+     "Jangan menyimpulkan backend aman hanya dari UI yang tidak error. Uji mulai/akhiri sesi, rotasi, lock/unlock, putusnya akses, dan pemulihan setelah proses dihentikan."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "backup",
+  "title": "Data, backup & pemulihan",
+  "description": "Data lokal tetap perlu cadangan yang kamu kendalikan.",
+  "group": "Referensi",
+  "sections": [
+   {
+    "title": "Penyimpanan",
+    "paragraphs": [
+     "Setting dan layout disimpan di SharedPreferences; data lain memakai file/JSON lokal. Tidak ditemukan kebutuhan server database untuk fungsi utama. Backup Android otomatis dinonaktifkan di manifest.",
+     "Membersihkan data atau menghapus aplikasi dapat menghapus profil, catatan, dan statistik. Simpan backup manual bila perlu."
+    ]
+   },
+   {
+    "title": "Ekspor dan impor",
+    "paragraphs": [
+     "Gunakan fitur Backup/Restore dari Game Center. Backup setting tidak otomatis menyertakan file musik atau gambar wallpaper aslinya. Simpan file media terpisah.",
+     "Restore antarfile preference belum merupakan satu transaksi menyeluruh; kegagalan dapat menghasilkan pemulihan sebagian. Periksa setting penting sesudah impor."
+    ]
+   },
+   {
+    "title": "Diagnostics",
+    "paragraphs": [
+     "Crash/event logs disimpan lokal untuk diagnosis. Bagikan hanya setelah membaca isi laporan dan menyensor informasi yang tidak ingin kamu bagikan.",
+     "Keberadaan log lokal tidak berarti ada pengiriman crash otomatis ke server."
+    ]
+   },
+   {
+    "title": "Capsule progress · v8.32",
+    "paragraphs": [
+     "Full backup includes permanent capsule collections and spent achievement ticket IDs. Restore preserves the union with newer local progress; importing an old backup repeatedly does not replenish those spent tickets.",
+     "Keep recent backups before moving devices. Later events cannot be recovered from an older backup. Wallpaper media is stored privately but not embedded in configuration backups; retain a separate copy of the original file."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "privacy",
+  "title": "Privasi & koneksi",
+  "description": "Jelaskan data lokal, izin, dan aktivitas jaringan.",
+  "group": "Referensi",
+  "sections": [
+   {
+    "title": "Data di perangkat",
+    "paragraphs": [
+     "Proyek tidak menyediakan akun GameSpace atau backend cloud untuk library/settings. Profil, layout, pilihan musik, playtime dan diagnostic logs dikelola secara lokal oleh implementasi yang ditinjau.",
+     "Notification access merupakan izin sensitif: aktifkan hanya bila kamu memakai fitur terkait. Aplikasi sumber dan Android mengendalikan metadata media yang tersedia."
+    ]
+   },
+   {
+    "title": "Koneksi yang ada",
+    "paragraphs": [
+     "Update checker menghubungi GitHub melalui HTTPS. Pengukuran ping menghubungi 1.1.1.1 ketika fitur network/latency aktif. Itu berarti aplikasi bukan sepenuhnya tanpa koneksi jaringan.",
+     "Server tujuan dapat melihat alamat IP pada koneksi tersebut. Kebijakan penyedia aplikasi musik/browser juga berlaku ketika kamu memutarnya."
+    ]
+   },
+   {
+    "title": "Website docs ini",
+    "paragraphs": [
+     "Website statis ini tidak memakai analytics, iklan, login, font eksternal atau server database. Search berjalan di browser. Pilihan tema disimpan lewat localStorage bila tersedia.",
+     "Hosting tetap dapat mencatat request jaringan sesuai kebijakan penyedia hosting. Jangan menyamakan website statis dengan jaminan tidak ada access log di server."
+    ]
+   },
+   {
+    "title": "Profil GitHub dan link eksternal",
+    "paragraphs": [
+     "Halaman About meminta data publik maintainer/contributor dari API GitHub dan avatar dari hosting GitHub. Metadata publik disimpan dalam cache lokal. Penyedia endpoint dapat melihat alamat IP.",
+     "Tautan komunitas/donasi dibuka di aplikasi atau browser eksternal dengan kebijakan privasinya sendiri. Tidak ada pesan atau donasi yang dikirim otomatis."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "build",
+  "title": "Build & struktur repo",
+  "description": "Panduan developer sesuai baseline v8.26.",
+  "group": "Developer",
+  "sections": [
+   {
+    "title": "Toolchain",
+    "paragraphs": [
+     "JDK 21; Android SDK Platform 37 dan Build Tools 37.0.0 sesuai konfigurasi proyek. Minimum Android API 29, target API 35. Gradle wrapper dan versi plugin dibaca dari file repo.",
+     "Jalankan bash gradlew :app:assembleDebug untuk APK development. Jalankan bash gradlew :app:testDebugUnitTest untuk unit tests. Output debug berada di app/build/outputs/apk/debug/."
+    ]
+   },
+   {
+    "title": "Baseline pengiriman",
+    "paragraphs": [
+     "Dokumentasi ini mengikuti v8.26 Adaptive Overlay. Perubahan signing/lint dari v8.27 tidak dimasukkan atas pilihan pemilik. Pengaturan release asli baseline tetap berlaku.",
+     "Build APK dan uji perangkat belum terverifikasi dalam pengiriman docs ini. Jangan memakai dokumentasi sebagai klaim lint/test/build telah lulus."
+    ]
+   },
+   {
+    "title": "Peta source",
+    "paragraphs": [
+     "app/src/main/kotlin/com/zkmnext/gamespace/feature/gamespace: UI, overlay, session tools, musik, dan Game Center. Subfolder tune: mesin tuning dan konfigurasi terkait.",
+     "library/device: monitor/input/usage. library/shell: backend akses. core: kompatibilitas, diagnostics, update, dan mode. app/src/test serta androidTest memuat test yang harus dijalankan pada lingkungan yang sesuai."
+    ]
+   },
+   {
+    "title": "Kontribusi",
+    "paragraphs": [
+     "Baca CONTRIBUTING.md. Buat perubahan terfokus, jelaskan kondisi sebelum/sesudah, dan laporkan pengujian yang benar-benar dijalankan. Jangan sertakan token, password, media pribadi, atau log sensitif."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "troubleshooting",
+  "title": "Troubleshooting",
+  "description": "Cari gejala, periksa akses, lalu uji satu perubahan.",
+  "group": "Bantuan",
+  "sections": [
+   {
+    "title": "Overlay tidak muncul",
+    "paragraphs": [
+     "Periksa izin tampil di atas aplikasi lain, deteksi game, game library, dan service notification. Beberapa ROM membatasi overlay pada layar tertentu.",
+     "Jika tersimpan di tepi/bawah, ubah dock atau buka-tutup panel setelah rotasi. Uji tanpa tool lain untuk membedakan masalah input dan layout."
+    ]
+   },
+   {
+    "title": "Musik tidak terbaca",
+    "paragraphs": [
+     "Pastikan Device Auto dipilih dan notification access diizinkan. Putar lagu, lalu lihat apakah Android sendiri menyediakan kontrol media. Website/aplikasi tanpa MediaSession tidak dapat dijamin terdeteksi."
+    ]
+   },
+   {
+    "title": "FPS nol atau sensor kosong",
+    "paragraphs": [
+     "Periksa backend FPS dan hak aksesnya. Game foreground harus terdeteksi. Sensor tertentu tidak diekspos ROM; jangan memaksa nilai nol menjadi angka estimasi tanpa penanda."
+    ]
+   },
+   {
+    "title": "Controller atau macro bermasalah",
+    "paragraphs": [
+     "Uji controller lewat pengaturan/perangkat input Android. Cek mode Gamepad dan legend. Untuk macro, sesuaikan koordinat setelah rotasi/resolusi berubah dan periksa persyaratan akses."
+    ]
+   },
+   {
+    "title": "Panas, charging, dan akses terputus",
+    "paragraphs": [
+     "Kembali ke default/Balance, hentikan eksperimen, lalu periksa restore dan akses. Jangan terus menambah boost ketika suhu sudah naik.",
+     "Untuk laporan bug, sertakan versi app, Android/ROM, model, mode akses, langkah reproduksi, dan hasil yang diharapkan. Sensor/charging perlu dibuktikan pada perangkat nyata."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "faq",
+  "title": "FAQ & status dukungan",
+  "description": "Jawaban singkat tanpa janji yang berlebihan.",
+  "group": "Bantuan",
+  "sections": [
+   {
+    "title": "Apakah wajib Root?",
+    "paragraphs": [
+     "Tidak untuk fungsi dasar. Beberapa tool membutuhkan shell atau Root, dan beberapa masih membutuhkan hardware/kernel yang kompatibel."
+    ]
+   },
+   {
+    "title": "Apakah berjalan di iPad?",
+    "paragraphs": [
+     "Ini aplikasi Android. Istilah rasio iPad/tablet di pembahasan layout berarti rasio layar seperti 4:3 pada perangkat Android, bukan dukungan iPadOS."
+    ]
+   },
+   {
+    "title": "Apakah tablet sudah dijamin aman?",
+    "paragraphs": [
+     "Belum. v8.26 memperbaiki perhitungan viewport serta posisi panel. Pemeriksaan hitungan dan source tidak menggantikan pengujian render, sentuhan, cutout, dan rotasi di tablet."
+    ]
+   },
+   {
+    "title": "Apakah ada APK download di sini?",
+    "paragraphs": [
+     "Website ini berisi dokumentasi source. Paket source yang diberikan bukan APK. Halaman release GitHub baru menjadi tujuan unduhan setelah pemilik benar-benar memublikasikan build."
+    ]
+   },
+   {
+    "title": "Lisensi dan kepemilikan",
+    "paragraphs": [
+     "Nama proyek ZKMNEXT dan pemilik proyek zuanvfx02. Lisensi source tercantum di LICENSE, sedangkan komponen pendukung mengikuti ketentuan yang didokumentasikan dalam THIRD_PARTY_NOTICES.md.",
+     "Dokumentasi ini tidak mengklaim bebas bug, kompatibel semua perangkat, atau bahwa seluruh library pihak ketiga adalah kode orisinal ZKMNEXT."
+    ]
+   }
+  ]
+ }
+]

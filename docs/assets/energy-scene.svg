@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 600" fill="none">
+  <defs>
+    <linearGradient id="neon"><stop stop-color="#ff304d"/><stop offset=".48" stop-color="#da70ef"/><stop offset="1" stop-color="#84a4ff"/></linearGradient>
+    <linearGradient id="top" x1="240" y1="160" x2="420" y2="300" gradientUnits="userSpaceOnUse"><stop stop-color="#f4f0f5"/><stop offset="1" stop-color="#9d9aa9"/></linearGradient>
+    <linearGradient id="left" x1="220" y1="250" x2="335" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="#8b8698"/><stop offset="1" stop-color="#37313f"/></linearGradient>
+    <linearGradient id="right" x1="420" y1="240" x2="330" y2="380" gradientUnits="userSpaceOnUse"><stop stop-color="#c3bacf"/><stop offset="1" stop-color="#5a526c"/></linearGradient>
+    <radialGradient id="aura"><stop stop-color="#bb2854" stop-opacity=".22"/><stop offset="1" stop-color="#100c12" stop-opacity="0"/></radialGradient>
+  </defs>
+  <circle cx="320" cy="300" r="280" fill="url(#aura)"/>
+  <g stroke="#ffffff" stroke-opacity=".055"><path d="M60 150h520M60 250h520M60 350h520M60 450h520M120 80v440M220 80v440M320 80v440M420 80v440M520 80v440"/></g>
+  <ellipse cx="320" cy="411" rx="219" ry="76" fill="#111014" stroke="#2b242f"/>
+  <ellipse cx="320" cy="406" rx="185" ry="58" stroke="url(#neon)" stroke-width="2"/>
+  <ellipse cx="320" cy="406" rx="204" ry="69" stroke="url(#neon)" stroke-opacity=".14" stroke-width="12"/>
+  <ellipse cx="320" cy="406" rx="148" ry="40" stroke="#ffffff" stroke-opacity=".11" stroke-dasharray="3 12"/>
+  <path d="m320 156 103 59-103 61-103-61 103-59Z" fill="url(#top)"/>
+  <path d="m217 215 103 61v126l-103-61V215Z" fill="url(#left)"/>
+  <path d="m320 276 103-61v126l-103 61V276Z" fill="url(#right)"/>
+  <path d="m320 156 103 59v126l-103 61-103-61V215l103-59Z" stroke="#f5d6ea" stroke-opacity=".42"/>
+  <path d="m217 215 103 61 103-61M320 276v126" stroke="#fff" stroke-opacity=".35"/>
+  <path d="m273 249 47 27v64l-47-27v-64Z" fill="#ff3553" fill-opacity=".85"/>
+  <path d="m335 285 42-24v12l-42 24v-12Zm0 24 42-24v12l-42 24v-12Z" fill="#f3e8f7" fill-opacity=".8"/>
+  <path d="M120 182v-30h30M490 152h30v30M120 453v30h30M520 453v30h-30" stroke="#9d6174" stroke-width="1"/>
+  <path d="M136 340h44m-22-22v44M476 192h28m-14-14v28" stroke="#ff3553" stroke-opacity=".5"/>
+  <circle cx="138" cy="407" r="4" fill="#ff3553"/><circle cx="500" cy="406" r="3" fill="#a0a0ff"/>
+  <g fill="#8e8994" font-family="monospace" font-size="9" letter-spacing="2"><text x="121" y="126">NATIVE MOTION / ZKMNEXT</text><text x="121" y="516">ENERGY CUBE</text><text x="460" y="516">01—03</text></g>
+</svg>
