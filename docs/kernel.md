@@ -1,21 +1,21 @@
-# Kernel & kontrol lanjutan
+# Kernel and advanced controls
 
-Governor, batas frekuensi, dan scheduler per profil.
+Governors, frequency limits and schedulers for each profile.
 
-## Sebelum mengubah
+## Before making changes
 
-Kernel settings membutuhkan akses yang benar dan node yang dapat ditulis. Gunakan compatibility test; fitur tidak didukung bukan masalah yang bisa diperbaiki dengan menambah izin biasa.
+Kernel settings require the right access and writable nodes. Run the compatibility test; ordinary permissions cannot make an unsupported feature available.
 
-Pengaturan ini dibagi lintas game sesuai profil. Pilih profil yang sedang diedit dengan sengaja.
+These settings are shared across games according to the selected profile. Deliberately choose the profile you intend to edit.
 
-## Kontrol yang tersedia
+## Available controls
 
-Governor CPU/GPU, CPU max frequency, scheduler/I/O, top-app boost, trace, prioritas, dan opsi khusus chipset hanya muncul atau bekerja sesuai kemampuan yang terdeteksi.
+CPU/GPU governors, maximum CPU frequency, scheduler/I/O, top-app boost, tracing, priorities and chipset-specific options depend on detected capabilities.
 
-Editor cluster menyediakan batas minimum/maksimum untuk cluster yang ditemukan. Jangan menyamakan ini dengan FPS target layar.
+The cluster editor provides minimum and maximum limits for detected clusters. These limits are separate from display FPS targets.
 
-## Apply dan Undo
+## Apply and Undo
 
-Apply now meminta penerapan konfigurasi. Undo/restore memakai data awal yang disimpan. Keberhasilan pemulihan tetap membutuhkan izin dan akses perangkat.
+Apply now requests application of your configuration. Undo/Restore uses the saved original values. Successful restoration still requires device access and permissions.
 
-Opsi lock values dan kontrol thermal eksperimental perlu kehati-hatian. Mulai dari nilai default, lalu ubah satu opsi dan periksa suhu/stabilitas.
+Treat value locking and experimental thermal controls carefully. Begin with defaults, change one option and check temperature and stability.

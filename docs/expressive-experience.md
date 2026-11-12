@@ -1,30 +1,29 @@
-# Expressive experience — ZE2 v43f
+# Expressive experience
 
-Pembaruan ini mempertahankan tampilan ZKMNEXT GameSpace dan menambahkan motion pada intro, tur Explore yang bisa dicoba, serta optimasi gambar Energy Cube.
+A livelier introduction, your first Explore tour, and a more measured Energy Cube.
 
-## Intro aplikasi
+## A familiar introduction
 
-Halaman awal tetap memakai identitas ZKMNEXT / Game Space, gradasi latar dan aksen tema. Emblem Energy Cube terbentuk dari tiga bidang vektor, disusul judul dan kalimat pembuka. Perpindahan halaman memiliki kedalaman, gerakan mengikuti arah Next / Back, dan indikator langkah bergerak mengikuti pilihan.
+ZKMNEXT and Game Space remain at the center of the introduction. A vector cube assembles in stages, pages move with Next and Back, and step indicators transition smoothly. Existing access, permission and privacy choices remain available.
 
-Pilihan Standard, Root, Shizuku / Axeron, izin, blur dan privasi tetap tersedia. Tidak ada izin yang diberikan oleh animasi atau tur. Pada perangkat dengan animasi sistem dimatikan atau mode hemat baterai, ilustrasi baru ditampilkan sebagai gambar diam. Intro tidak diulang paksa untuk pengguna yang sebelumnya sudah menyelesaikannya.
+Additional motion becomes static when system animations are disabled or battery saver is active. Existing users are not forced through setup again.
 
-## Tur Explore pertama
+## Try the Explore tour
 
-Setelah setup pertama, kartu panduan membuka halaman asli: Home, App list, Customization, Monitoring dan Settings. Kartu memiliki ruang sendiri di bawah halaman sehingga tidak menutupi kontrol yang dijelaskan. Tombol Add a game membuka pemilih game asli; halaman kontrol dan monitor tetap mengikuti akses perangkat.
+After first-time setup, follow the guide card at the bottom of the screen. Next visits the actual Home, App list, Customization, Monitoring and Settings pages. Add a game opens the real app picker.
 
-Gunakan Next / Back untuk berjalan mengikuti panduan. Tombol tutup melewati tur. Posisi tur tersimpan agar bisa dilanjutkan setelah aplikasi dibuka lagi. Selesai tur mengembalikanmu ke Home.
+The card reserves its own space instead of covering page controls. Use Back to return or close the card to skip. Progress is saved, and finishing returns you to Home.
 
-Untuk mengulang: **Settings → Troubleshooting → Replay Explore tour**. Intro setup dapat diulang lewat **Replay intro**. Pengguna lama tidak otomatis dipaksa masuk tur setelah pembaruan.
+Replay it through Settings > Troubleshooting > Replay Explore tour. The tour never enables Root, shell access or device permissions automatically.
 
-## Motion dan Energy Cube
+## Energy Cube rendering budgets
 
-- Ambient Explore memakai clock dengan batas perubahan state 30 Hz, berhenti ketika lifecycle layar tidak STARTED, dan diam dalam mode hemat baterai / animasi nonaktif.
-- Energy Cube dan Energy Cube v2 membatasi gambar dekoratif menjadi maksimum 60 fps. Perangkat MID dan LITE tetap menggunakan anggaran 30 fps dan efek yang lebih ringan.
-- Energy Cube v2 memakai satu callback frame untuk waktu animasi dan deteksi frame lambat. Lebar teks dihitung ketika teks berubah, bukan diukur ulang setiap frame.
-- Durasi, urutan gambar, warna dan penurunan kualitas otomatis tetap mengikuti scene yang ada. Batas gambar UI tidak mengubah FPS game atau kemampuan CPU/GPU.
+Decorative Energy Cube and v2 rendering is capped at 60 fps; MID and LITE devices retain a 30 fps budget. Energy Cube v2 shares one clock between the scene and slow-frame detection, and caches text measurements until the text changes.
 
-## Website dokumentasi
+Explore ambient motion stops when the screen is not visible. These UI budgets reduce repeated rendering work; they do not guarantee higher game FPS.
 
-Landing page memakai komposisi lebar, ilustrasi Energy Cube lokal, enam jalur panduan utama, pilihan Explore / Handheld / Gamepad, peta sistem dan komunitas. Halaman artikel mempertahankan tautan hash lama, pencarian lokal, tema terang/gelap dan navigasi Markdown.
+## Documentation for your next session
 
-Tab mode dapat dipakai dengan tombol panah, Home dan End. Artikel memiliki estimasi waktu baca, daftar isi untuk layar kecil, penanda bagian aktif dan tombol salin tautan. Motion website mengikuti prefers-reduced-motion dan berhenti saat tab browser disembunyikan. Tidak ada font, analytics, atau library runtime eksternal baru.
+Find guides from the home page, compare three modes, and follow system signals on the interactive map. Search runs locally in your browser; open it with Ctrl or Command K.
+
+Articles include a mobile table of contents and a Copy link button. Theme and reduced motion follow your device preferences.

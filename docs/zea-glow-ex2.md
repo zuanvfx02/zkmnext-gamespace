@@ -1,31 +1,24 @@
-# ZEA Glow EX II — pack karakter (runtime v42+)
+# ZEA Glow EX II — historical character packs, runtime v42+
 
-Generasi kedua pack Zea. Runtime tidak berubah, jadi ukuran APK juga tidak naik: semua pembaruan ada di ZIP.
+The second-generation EX packs update artwork through ZIP files without changing the app runtime or APK size.
 
-## Pasang
+## Import
 
-Character Studio → Archive → Import Character ZIP:
+Use Character Studio > Archive > Import Character ZIP. Zea-Glow-EX2.zip is the room pack with ID zea; Zea-Chibi-Glow-EX2.zip is the assistant with ID zea_chibi. Matching IDs replace the earlier packs.
 
-1. **Zea-Glow-EX2.zip**: karakter ruang (`id: zea`, menimpa Zea EX).
-2. **Zea-Chibi-Glow-EX2.zip**: asisten (`id: zea_chibi`).
+## Contents
 
-## Isi
+Eight outfits: Neo Idol, Cyber Hoodie, Astral Knight, Lunar Mage, Crimson Valkyrie, Retro Idol, Retro Hoodie and Retro Battle. There are 28 states per outfit, totaling 224 moods.
 
-- **8 outfit**: Neo Idol, Cyber Hoodie, Astral Knight, Lunar Mage, **Crimson Valkyrie** (baru: garis energi merah-putih), Retro Idol, Retro Hoodie, Retro Battle.
-- **28 state per outfit** (224 mood). Setiap state EX punya frame sendiri dengan efek yang dibake:
-  - Volume ala 3D: rim light kanan-atas, bayangan sisi kiri-bawah, key light dari atas, bayangan kontak di lantai (mengecil saat melompat).
-  - Combat: afterimage, slash bulan sabit inti putih, ledakan impact, sparkle, aura outline, lingkaran sihir, pilar cahaya (ultimate), perisai hexagon (guard), speed lines dan debu (run/dash/jump), scan HUD (idle_scan).
-  - Emote pixel: hati, urat marah, uap, tetes keringat, `!`, `?`, not musik, `zZ`, bintang pusing, garis kaget dan murung, blush.
-- **24 equipment** (5 slot) dari atlas Glow EX, power stage I/II/III, kecepatan 0.5–2x, energy effects, auto-life: semua fitur runtime v42 tetap berlaku di atas frame baru.
-- Profil, arsip cerita, dan kalimat reaksi Bahasa Indonesia untuk semua kejadian.
+EX frames include rim/key lighting, contact shadows, afterimages, crescent slashes, impacts, sparkles, auras, magic circles, ultimate pillars, hexagonal shields, speed lines, dust and scanning HUD elements. Pixel emotes include hearts, anger marks, steam, sweat, punctuation, music notes, sleep marks, dizzy stars, surprise lines and blush.
 
-Batas yang dicek generator: 576/570 part (maks. 600), 224 mood (maks. 256), ZIP sekitar 9,4/10,5 MB (maks. 16 MB), setiap frame 192×256.
+The packs retain 24 equipment items across five slots, power stages I/II/III, 0.5–2× animation speed, energy effects, auto-life, profiles, story archives and Indonesian character reaction lines. These reaction lines are pack content, not the website interface.
 
-## Rebuild
+Generator checks recorded 576/570 parts against a limit of 600, 224 moods against 256, ZIPs around 9.4/10.5 MB against 16 MB, and 192×256 frames.
 
 ```sh
 python3 tools/character-pack/build_glow2.py /path/Zea.zip /path/Zea-Chibi.zip build/glow2
 python3 tools/character-pack/preview_glow2.py build/glow2/Zea-Glow-EX2.zip build/glow2/preview attack ultimate
 ```
 
-`Zea.zip` dan `Zea-Chibi.zip` adalah pack v2 lama (sumber outfit Retro dan background). Artwork EX diambil dari `tools/character-pack/glow-art/`. Resep frame per state ada di fungsi `recipes()`; outfit di `EX_SKINS`.
+Original v2 packs supply Retro outfits and backgrounds. EX artwork is in tools/character-pack/glow-art/; recipes() defines frames and EX_SKINS defines outfits.

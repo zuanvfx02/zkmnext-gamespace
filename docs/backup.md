@@ -1,29 +1,27 @@
-# Data, backup & pemulihan
+# Data, backups and recovery
 
-Data lokal tetap perlu cadangan yang kamu kendalikan.
+Keep local backups under your control.
 
-## Penyimpanan
+## Storage
 
-Setting dan layout disimpan di SharedPreferences; data lain memakai file/JSON lokal. Tidak ditemukan kebutuhan server database untuk fungsi utama. Backup Android otomatis dinonaktifkan di manifest.
+Settings and layouts use SharedPreferences; other data uses local files/JSON. Core features do not require a server database. Automatic Android backup is disabled in the manifest.
 
-Membersihkan data atau menghapus aplikasi dapat menghapus profil, catatan, dan statistik. Simpan backup manual bila perlu.
+Clearing app data or uninstalling can erase profiles, notes and statistics. Save a manual backup when needed.
 
-## Ekspor dan impor
+## Export and import
 
-Gunakan fitur Backup/Restore dari Game Center. Backup setting tidak otomatis menyertakan file musik atau gambar wallpaper aslinya. Simpan file media terpisah.
+Use Game Center's Backup/Restore. A settings backup does not automatically include original music or wallpaper files. Keep media separately.
 
-Restore antarfile preference belum merupakan satu transaksi menyeluruh; kegagalan dapat menghasilkan pemulihan sebagian. Periksa setting penting sesudah impor.
+Restoration across preference files is not one global transaction; failures can leave partial results. Check important settings after import.
 
 ## Diagnostics
 
-Crash/event logs disimpan lokal untuk diagnosis. Bagikan hanya setelah membaca isi laporan dan menyensor informasi yang tidak ingin kamu bagikan.
+Crash/event logs are stored locally for diagnosis. Read reports and redact information you do not want to share before sending them.
 
-Keberadaan log lokal tidak berarti ada pengiriman crash otomatis ke server.
+Local logs do not imply automatic crash uploads.
 
-## Progress protection update (v8.31)
+## Capsule progress · v8.32
 
-Full backup includes reward unlocks and profile bio. Restore merges recorded progress rather than replacing newer local progress with an older snapshot. Media-file exclusions and failure/transaction limits still apply; see PROGRESS_BACKUP_v8_31.md in the project root.
+Full backups include permanent capsule collections and spent achievement-ticket IDs. Restore preserves the union with newer local progress; repeatedly importing an old backup does not replenish spent tickets.
 
-### Reward capsules (v8.32)
-
-Full backup also includes permanent capsule collections and the unique achievement IDs consumed as tickets. Restore unions these sets with existing progress, so restoring older backups on the same installation does not reset spent tickets. Keep a recent backup before changing devices: events after a backup was made cannot be recovered from that backup. Wallpaper media files still require separate copies.
+Keep recent backups before moving devices. An older backup cannot recover later events. Wallpaper media is private but not embedded in configuration backups; keep the original file separately.

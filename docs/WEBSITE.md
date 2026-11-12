@@ -1,38 +1,34 @@
-# Mengelola website docs
+# Maintaining the docs website
 
-## Struktur
+## Structure
 
-- index.html: shell halaman.
-- assets/style.css: dasar layout, artikel dan peta interaktif.
-- assets/expressive.css: tampilan Expressive, layout responsif dan reduced motion.
-- assets/landing.js: landing page serta pilihan mode dengan dukungan keyboard.
-- assets/energy-scene.svg: ilustrasi Energy Cube lokal.
-- assets/app.js: navigasi hash, search lokal, tema, animasi, menu mobile, dan bagian komunitas.
-- assets/flow.js: peta interaktif #cara-kerja (canvas 2D). Node, jalur, dan skenario ada di konstanta NODES, EDGES, dan SCENARIOS di awal file. Peta berhenti menggambar saat keluar layar atau tab tersembunyi.
-- assets/content.json: 22 panduan terstruktur (termasuk Expressive experience dan Yang baru di ZE2 v43f).
-- assets/brand.svg: ikon aplikasi yang dikonversi dari vector proyek.
-- *.md: panduan yang dapat dibaca langsung di GitHub.
+- `index.html`: page shell and English accessibility labels.
+- `assets/style.css`: base layout, articles and interactive-map styles.
+- `assets/expressive.css`: Expressive appearance, responsive layouts and reduced motion.
+- `assets/landing.js`: landing page, ZEA companion and keyboard-accessible experience tabs.
+- `assets/energy-scene.svg`: local Energy Cube illustration.
+- `assets/zea/`: original transparent ZEA Void and Mini artwork from the character packs.
+- `assets/app.js`: hash routes, local search, themes, reading progress and mobile navigation.
+- `assets/flow.js`: interactive Canvas map. Nodes, edges and scenarios are defined in NODES, EDGES and SCENARIOS. Rendering pauses outside the viewport or in a hidden tab.
+- `assets/content.json`: 23 English guides. Markdown counterparts are provided for direct reading.
+- `assets/brand.svg`: the app's vector brand mark.
 
-Tidak ada backend, database, tracking script, font CDN atau dependency runtime. Buka melalui HTTP, bukan file://.
+The site has no application backend, database, tracking script, external font or runtime dependency. Serve it over HTTP rather than opening it through file://.
 
-## GitHub Pages tanpa workflow
+## GitHub Pages
 
-Push source ke repo saat kamu siap. Buka Settings → Pages → Deploy from a branch → pilih branch dan /docs → Save. GitHub menyediakan URL setelah deployment selesai. Semua asset relatif sehingga mendukung repo project pages/subpath.
+For branch deployment, open Settings > Pages > Deploy from a branch, select the branch and `/docs`, then Save. Relative asset paths support project pages and subpaths.
 
-## GitHub Pages dengan Actions
+For Actions deployment, choose Settings > Pages > Source: GitHub Actions and run Documentation Pages from Actions. This uploads documentation without building an APK or sending Telegram messages. It can discover docs/index.html up to three directories below the repository root. Choose one deployment method rather than enabling both.
 
-Pilih Settings → Pages → Source: GitHub Actions. Jalankan workflow manual Documentation Pages dari tab Actions. Workflow hanya mengunggah docs, tidak membuat APK atau mengirim Telegram. Jika GameSpaceApp berada di subfolder repo, workflow mencari docs/index.html hingga kedalaman tiga.
+## Local checks
 
-Jangan aktifkan kedua metode bersamaan. Tidak ada repo yang didorong atau Pages yang diterbitkan oleh paket source ini.
+Run `python3 -m http.server 8080 --directory docs`. Check 360px phones, 768px tablets and 1440px desktops. Verify horizontal overflow, menu dismissal, search selection, Escape, Ctrl/Cmd K and direct guide-link reloads.
 
-## Uji lokal
+## Editing content
 
-Jalankan python3 -m http.server 8080 --directory docs. Periksa HP 360px, tablet 768px dan PC 1440px. Pastikan tidak ada overflow horizontal, menu bisa ditutup, hasil search bisa dipilih, Escape menutup pencarian, Ctrl/Cmd K membuka search, serta link panduan langsung dapat dimuat ulang.
+Update content.json and the corresponding Markdown. Keep guide IDs stable: routes use #id and #id/s0. The legacy #cara-kerja route is retained for existing links; its visible title is How it works. Do not add unverified testing or compatibility claims.
 
-## Mengubah isi
+## Interaction checks
 
-Perbarui content.json dan Markdown terkait. Setiap artikel memakai id stabil; URL adalah #id atau #id/s0 untuk bagian tertentu. Jangan menyisipkan klaim hasil uji/dukungan yang belum dibuktikan. Link source/release publik baru ditambahkan setelah URL repo benar-benar tersedia.
-
-## Pemeriksaan interaksi
-
-Jalankan `npm ci --prefix tools/docs-ui` lalu `npm test --prefix tools/docs-ui` dari root project. Pemeriksaan DOM mencakup navigasi panduan, pencarian, tema, tautan artikel, menu dan tab mode dengan keyboard. Pemeriksaan ini tidak menggantikan pemeriksaan visual di browser dan ponsel.
+From the project root, run `npm ci --prefix tools/docs-ui` and `npm test --prefix tools/docs-ui`. DOM tests cover guides, search, themes, article links, menus and keyboard tabs. They do not replace visual browser and physical-device testing.

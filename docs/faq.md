@@ -1,25 +1,25 @@
-# FAQ & status dukungan
+# FAQ and support status
 
-Jawaban singkat tanpa janji yang berlebihan.
+Straight answers about supported behavior.
 
-## Apakah wajib Root?
+## Is Root required?
 
-Tidak untuk fungsi dasar. Beberapa tool membutuhkan shell atau Root, dan beberapa masih membutuhkan hardware/kernel yang kompatibel.
+Not for basic features. Some tools require shell or Root, and some also need compatible hardware or kernel interfaces.
 
-## Apakah berjalan di iPad?
+## Does it run on iPad?
 
-Ini aplikasi Android. Istilah rasio iPad/tablet di pembahasan layout berarti rasio layar seperti 4:3 pada perangkat Android, bukan dukungan iPadOS.
+This is an Android app. Tablet/iPad-ratio references describe shapes such as 4:3 on Android devices, not iPadOS support.
 
-## Apakah tablet sudah dijamin aman?
+## Is tablet support guaranteed?
 
-Belum. v8.26 memperbaiki perhitungan viewport serta posisi panel. Pemeriksaan hitungan dan source tidak menggantikan pengujian render, sentuhan, cutout, dan rotasi di tablet.
+No. The v8.26 changes improve viewport calculations and panel positioning. Source and geometry checks do not replace rendering, touch, cutout and rotation tests on tablets.
 
-## Apakah ada APK download di sini?
+## Can I download an APK here?
 
-Website ini berisi dokumentasi source. Paket source yang diberikan bukan APK. Halaman release GitHub baru menjadi tujuan unduhan setelah pemilik benar-benar memublikasikan build.
+This website documents the source. Source packages are not installable APKs. Use the owner's published GitHub Releases for available builds.
 
-## Lisensi dan kepemilikan
+## Licensing and ownership
 
-Nama proyek ZKMNEXT dan pemilik proyek zuanvfx02. Lisensi source tercantum di LICENSE, sedangkan komponen pendukung mengikuti ketentuan yang didokumentasikan dalam THIRD_PARTY_NOTICES.md.
+The project is ZKMNEXT, maintained by zuanvfx02. Source licensing is stated in LICENSE; supporting components retain their documented third-party terms and notices.
 
-Dokumentasi ini tidak mengklaim bebas bug, kompatibel semua perangkat, atau bahwa seluruh library pihak ketiga adalah kode orisinal ZKMNEXT.
+This documentation does not claim bug-free operation, universal compatibility or that every third-party library is original ZKMNEXT code.

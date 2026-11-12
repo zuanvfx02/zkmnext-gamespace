@@ -1,25 +1,25 @@
-# Build & struktur repo
+# Building and repository structure
 
-Panduan developer sesuai baseline v8.26.
+Developer setup and the project's build workflow.
 
 ## Toolchain
 
-JDK 21; Android SDK Platform 37 dan Build Tools 37.0.0 sesuai konfigurasi proyek. Minimum Android API 29, target API 35. Gradle wrapper dan versi plugin dibaca dari file repo.
+Use JDK 21 and the Android SDK/build tools selected by the project. The supplied source uses SDK 37 with its configured minor API level and Build Tools 37.0.0. Minimum Android API is 29; target SDK is selected in app/build.gradle.kts. Read plugin and wrapper versions from the repository.
 
-Jalankan bash gradlew :app:assembleDebug untuk APK development. Jalankan bash gradlew :app:testDebugUnitTest untuk unit tests. Output debug berada di app/build/outputs/apk/debug/.
+Run bash gradlew :app:assembleDebug for a development APK and bash gradlew :app:testDebugUnitTest for unit tests. Debug output is in app/build/outputs/apk/debug/.
 
-## Baseline pengiriman
+## Delivery baseline
 
-Release signing has been moved outside Gradle at the owner's request. See [Unsigned release / ACS IDE](../RELEASE_UNSIGNED_ACS.md). The release artifact is `app/build/outputs/apk/release/app-release-unsigned.apk`; sign it externally before installation. No key properties are required by the release build. Native library requirements remain unchanged.
+Release and native-backend configuration remain in the source. Follow the existing build workflow for its CMake, NDK and Rust requirements. Documentation revisions are not APK version numbers.
 
-Build APK dan uji perangkat belum terverifikasi dalam pengiriman docs ini. Jangan memakai dokumentasi sebagai klaim lint/test/build telah lulus.
+UI/JVM compilation and targeted tests do not replace a complete native release build or physical-device testing. Read the validation notes for the checks actually performed.
 
-## Peta source
+## Source map
 
-app/src/main/kotlin/com/zkmnext/gamespace/feature/gamespace: UI, overlay, session tools, musik, dan Game Center. Subfolder tune: mesin tuning dan konfigurasi terkait.
+app/src/main/kotlin/com/zkmnext/gamespace/feature/gamespace contains UI, overlays, session tools, music and Game Center. Its tune subdirectory contains tuning engines and configuration.
 
-library/device: monitor/input/usage. library/shell: backend akses. core: kompatibilitas, diagnostics, update, dan mode. app/src/test serta androidTest memuat test yang harus dijalankan pada lingkungan yang sesuai.
+library/device contains monitoring/input/usage, library/shell contains access backends, and core contains compatibility, diagnostics, updates and modes. Run app/src/test and androidTest in their appropriate environments.
 
-## Kontribusi
+## Contributing
 
-Baca CONTRIBUTING.md. Buat perubahan terfokus, jelaskan kondisi sebelum/sesudah, dan laporkan pengujian yang benar-benar dijalankan. Jangan sertakan token, password, media pribadi, atau log sensitif.
+Read CONTRIBUTING.md. Keep changes focused, explain before/after behavior and report the tests actually run. Do not include tokens, passwords, private media or sensitive logs.

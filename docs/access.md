@@ -1,25 +1,25 @@
-# Akses & izin
+# Access and permissions
 
-Basic, Shizuku/Axeron, dan Root punya kemampuan berbeda.
+Basic, Shizuku/Axeron and Root provide different capabilities.
 
-## Pilih tingkat akses
+## Choose your access level
 
-Basic: library, statistik, profil, pemutar musik, dan fitur UI. Overlay tetap memerlukan izin tampil di atas aplikasi lain.
+Basic supports the library, statistics, profiles, music and UI features. Overlays still require display-over-other-apps permission.
 
-Shizuku / Axeron: perintah shell sesuai UID layanan. Layanan berbasis ADB tidak otomatis memiliki hak Root.
+Shizuku / Axeron execute shell commands under the service's UID. An ADB-based service does not automatically have Root privileges.
 
-Root: memungkinkan kontrol kernel yang diekspos perangkat. Root tidak menciptakan node charging, fan, atau governor yang tidak tersedia.
+Root enables kernel controls exposed by the device. It cannot create missing charging, fan or governor interfaces.
 
-## Izin berdasarkan kebutuhan
+## Permissions by feature
 
-Usage access: mendeteksi game aktif dan menghitung playtime. Overlay: panel, FPS, crosshair, dan area anti-mistouch. Notifikasi biasa: foreground service dan tombol kontrol.
+Usage access detects foreground games and records playtime. Overlay access enables panels, FPS, crosshairs and anti-mistouch zones. Regular notifications provide foreground-service status and controls.
 
-Notification access: Barrage, popup panggilan yang didukung, serta Device Auto music. Kamu bisa menonaktifkan Barrage tanpa mematikan Device Auto.
+Notification access supports Barrage, compatible call popups and Device Auto music. You can disable Barrage while continuing to use Device Auto.
 
-DND access: mengubah mode gangguan. Accessibility dipakai fitur magnification yang didukung; ini berbeda dari izin Root/ADB. Akses file musik diberikan lewat pemilih dokumen.
+DND access controls interruption settings. Supported magnification features use Accessibility, separately from Root/ADB access. Music files are selected through Android's document picker.
 
-## Jika akses tidak tersambung
+## If access is disconnected
 
-Mulai layanan Shizuku/Axeron dan berikan izin ke GameSpace. Pilih backend yang benar, periksa UID/status, lalu jalankan compatibility test lagi.
+Start Shizuku/Axeron and grant GameSpace permission. Select the correct backend, check its UID and status, then run the compatibility test again.
 
-Setelah restart perangkat, akses ADB bisa perlu diaktifkan lagi. Pengecualian optimasi baterai membantu menjaga service, tetapi perilaku tiap ROM berbeda.
+ADB access may need reactivation after a restart. Battery-optimization exemptions can help keep services running, but behavior varies by ROM.
