@@ -33,6 +33,8 @@ Set it up once, then play the way you want. Made by **zuanvfx02**.
 
 ## Contents
 
+- [Meet ZEA](#meet-zea)
+- [ZEA previews](#zea-previews)
 - [Why GameSpace](#why-gamespace)
 - [What's new in ZE2 v25](#whats-new-in-ze2-v25)
 - [Features](#features)
@@ -44,6 +46,34 @@ Set it up once, then play the way you want. Made by **zuanvfx02**.
 - [How it works](#how-it-works)
 - [Community](#community)
 - [Feedback and support](#feedback-and-support)
+
+## Meet ZEA
+
+**ZEA is the official anime character and companion of ZKMNEXT GameSpace.**
+A familiar face for your gaming space: meet her Void form in the Character Room, or her Mini form as your on-screen companion.
+
+<div align="center">
+<table>
+<tr><td align="center" width="50%"><img src="docs/assets/zea/zea-void-wave.png" width="260" alt="ZEA Void, the official ZKMNEXT GameSpace anime character"><br><b>ZEA Void</b><br><sub>Void Vanguard · Character Room</sub></td><td align="center" width="50%"><img src="docs/assets/zea/zea-void-mini.png" width="160" alt="ZEA Mini companion"><br><b>ZEA Mini</b><br><sub>Your on-screen companion</sub></td></tr>
+</table>
+</div>
+
+- **Four outfits:** Void Vanguard, Gothic Void, Crimson Reaper and Frost Void.
+- **Expressions and actions:** explore reactions, poses and authored action animations.
+- **Equipment:** personalize her loadout in the Character Studio.
+- **One identity:** full and Mini are two forms of ZEA, GameSpace's own character.
+
+Character packs are imported separately in the app. See the [character pack guide](docs/character-packs.md) and [ZEA Void](docs/zea-void.md).
+
+## ZEA previews
+
+These previews show the actual Android Character Studio with ZEA Void.
+
+| Character Room | Dressing room | Action stage |
+| --- | --- | --- |
+| [![ZEA Void in the Character Room](docs/studio-previews/01-room.png)](docs/studio-previews/01-room.png) | [![ZEA Void outfits](docs/studio-previews/02-wardrobe.png)](docs/studio-previews/02-wardrobe.png) | [![ZEA Void ultimate action](docs/zea-glow-previews/03-zea-ultimate.png)](docs/zea-glow-previews/03-zea-ultimate.png) |
+
+[Open the GameSpace website](https://zkmnext-gamespace-docs-expressive-v43f.classicecho1.chatgpt.site) · [Preview refresh details](docs/void-preview-refresh.md)
 
 ## Why GameSpace
 
@@ -213,13 +243,13 @@ Curious what happens behind the scenes? The docs site has an interactive 3D map 
 
 | Flow | What you see |
 | --- | --- |
-| Game dibuka | ActivityManager event → ProcessPulse → AIDL → game detection → overlay and profile → node journal → kernel |
-| Tekan Keymap | Your finger → Keymap lease → shared touch session → `IRootService` → privileged process → Android input → game |
+| Game launched | ActivityManager event → ProcessPulse → AIDL → game detection → overlay and profile → node journal → kernel |
+| Press Keymap | Your finger → Keymap lease → shared touch session → `IRootService` → privileged process → Android input → game |
 | Keymap + Macro | Two leases in one session, two separate finger lanes, one gesture |
 | Gravity X | Gamepad stick → Gravity X → shared touch session → game |
-| Mode Rise | Panel → mode engine → journal saves the originals → privileged write to the kernel |
-| App dipaksa berhenti | ScoutGuard hands a restore script to the privileged process, which runs it when the app dies |
-| Layar mati | ScreenGate pauses overlays and FPS sampling |
+| Rise mode | Panel → mode engine → journal saves the originals → privileged write to the kernel |
+| App force-stopped | ScoutGuard hands a restore script to the privileged process, which runs it when the app dies |
+| Screen off | ScreenGate pauses overlays and FPS sampling |
 
 Node names match the v25 source classes. The animation simplifies timing.
 
