@@ -1,6 +1,5 @@
 // Interactive "how it works" map for ZKMNEXT GameSpace. Canvas 2D, no dependencies.
-// Nodes and flows follow the real v25 source: KeymapInjector/TouchLanes, IRootService (AIDL), RootServiceImpl,
-// ProcessPulse, LegacyNodeJournal, ScoutGuard, ScreenGate.
+// Nodes and flows are a simplified picture of how the app works; timing is simplified too.
 
 const LAYERS = [
   { name: 'You and the game', y: 330, r: 160, off: 0.35 },

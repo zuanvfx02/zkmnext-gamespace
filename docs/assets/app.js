@@ -1,7 +1,7 @@
 import { landingMarkup, activateLanding } from './landing.js';
 // ZKMNEXT GameSpace docs: hash navigation, local search, theme, motion and the "how it works" map. No dependencies.
 const $ = s => document.querySelector(s);
-const VERSION = 'ZE2 v43f';
+const VERSION = 'v1.5.0';
 // Guides that also exist as Markdown next to index.html (others only live in content.json).
 const MARKDOWN = new Set(['access', 'backup', 'build', 'faq', 'kernel']);
 const FLOW_ID = 'cara-kerja';
@@ -44,7 +44,7 @@ function home() {
 function howItWorks() {
   document.title = 'How it works · ZKMNEXT Docs';
   document.body.classList.add('wide');
-  $('#content').innerHTML = `<article class="article"><div class="breadcrumb"><a href="#">Docs</a> / How it works</div><h1>How GameSpace works</h1><p class="lead">Follow a signal from your fingers through plugins and the privileged process to the game. Choose a flow or select any node to learn its role.</p><div id="flow-root"></div><p class="flow-note">This map follows source classes in ${VERSION} (KeymapInjector, IRootService, RootServiceImpl, LegacyNodeJournal, ScoutGuard). Animation simplifies the sequence and timing; it does not represent actual device speed.</p></article>`;
+  $('#content').innerHTML = `<article class="article"><div class="breadcrumb"><a href="#">Docs</a> / How it works</div><h1>How GameSpace works</h1><p class="lead">Follow a signal from your fingers through plugins and the privileged process to the game. Choose a flow or select any node to learn its role.</p><div id="flow-root"></div><p class="flow-note">This map is a simplified picture of GameSpace ${VERSION}. Animation simplifies the sequence and timing; it does not represent actual device speed.</p></article>`;
   import('./flow.js').then(m => {
     if (currentId() === FLOW_ID && $('#flow-root')) destroyFlow = m.mountFlow($('#flow-root'));
   }).catch(() => { $('#flow-root').innerHTML = '<p class="lead">The interactive map could not load. Reload the page.</p>'; });

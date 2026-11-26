@@ -8,14 +8,14 @@
    {
     "title": "About ZKMNEXT",
     "paragraphs": [
-     "ZKMNEXT GameSpace is an Android game launcher, device monitor and overlay toolkit. Project identity: ZKMNEXT · zuanvfx02. ZE2 v43f preserves Explore and adds the Expressive experience.",
+     "ZKMNEXT GameSpace is an Android game launcher, device monitor and overlay toolkit. Project identity: ZKMNEXT · zuanvfx02. Version 1.5.0 keeps Explore, Handheld and Gamepad, and adds App Templates, a console Super Base for Gamepad and backend mode.",
      "Features run on your device without a GameSpace account. System controls depend on Android, your ROM, chipset, kernel and granted access."
     ]
    },
    {
     "title": "Your first three steps",
     "paragraphs": [
-     "1. Install the APK from a source you trust and open GameSpace. Android 10 / API 29 is the minimum requirement.",
+     "1. Download the APK from the official GitHub Releases or the official Telegram channel and open GameSpace. Android 10 / API 29 is the minimum requirement.",
      "Complete the introduction, then try the Explore tour to discover the library, controls, monitor and Settings. Skip or replay it through Settings > Troubleshooting.",
      "2. Add a game to your library. Choose Explore for everyday navigation, Handheld for a landscape lobby, or Gamepad for controller navigation.",
      "3. Open access settings, grant the permissions your chosen features need, and launch a game from the library."
@@ -103,46 +103,58 @@
  },
  {
   "id": "whatsnew",
-  "title": "What's new in ZE2 v43f",
-  "description": "An Expressive introduction, the first Explore tour, Energy Cube improvements and a new docs website.",
+  "title": "What's new in 1.5.0",
+  "description": "App Templates, Super Base for Gamepad, a GameSpace that only runs when you need it, smoother game-start animations and new intros.",
   "group": "Getting started",
   "sections": [
    {
-    "title": "The Expressive experience",
+    "title": "App Templates",
     "paragraphs": [
-     "The introduction retains ZKMNEXT's identity with a vector Energy Cube, layered page transitions and animated step indicators. The Explore tour opens real app pages and can be replayed from Troubleshooting.",
-     "Energy Cube caps decorative rendering. Version 2 caches text measurements and uses one frame clock. The docs website adds a new landing page, keyboard-accessible mode tabs and a clearer reading experience."
+     "Super Base has a new App Templates page. A whitelist holds apps GameSpace must never close, such as a VPN or ping booster. It is respected by Clean RAM at game start, Clean now, Dynamic manager and Limit background apps. You can also protect every VPN app automatically, plus your launcher, keyboard, SMS and phone apps.",
+     "A blacklist holds apps that GameSpace closes when a game starts, either fully (force stop) or only their background processes. If an app is on both lists, the whitelist wins.",
+     "Keep several templates and switch each one on or off. Share a template as a .json file, copy it as text for a chat, import it from a file or the clipboard with a preview, or back up and restore your whole configuration. Your old Keep running list becomes a whitelist template automatically.",
+     "Closing other apps needs Shizuku, Axeron or Root."
     ]
    },
    {
-    "title": "Input plugins work together",
+    "title": "Super Base for Gamepad",
     "paragraphs": [
-     "Keymap, Shoulder Triggers, Gravity X and Macro playback share one touch session. Each plugin holds its own lease, so stopping one does not stop the others.",
-     "TouchLanes assigns local finger IDs to 32 physical lanes. Keymap buttons and Macro fingers no longer overwrite each other.",
-     "Recording a macro still requires raw touchscreen capture. If a mapper owns the screen, GameSpace shows a message instead of recording empty data. The sensitivity wheel cannot run alongside touch mapping yet."
+     "Gamepad mode has its own console-style Super Base: large tiles, D-pad focus, A to open and B to go back. It holds App Templates, FPS Results, Album, FG, ZEA, Game Center, Control panel, Plugins, Custom mode and Root tools. Open it from Tools under Play."
     ]
    },
    {
-    "title": "Scout shuts down completely",
+    "title": "GameSpace only runs when you need it",
     "paragraphs": [
-     "ScoutGuard records system settings before Scout changes them. GameSpace restores them when you disable Scout and when the app opens again.",
-     "If you force-stop the app, the Root process or shell server runs the recovery script previously registered by ScoutGuard.",
-     "Accessibility services you enabled yourself stay enabled. GameSpace only detaches services that Scout enabled through Root or Shizuku."
+     "With Shizuku, Axeron or Root, backend mode is on by default. It works like the small background daemons of Magisk or KernelSU: a tiny watcher runs in the background and the GameSpace app does not. When one of your library games comes to the front, it starts GameSpace with the splash, panel and overlays as usual.",
+     "Switching to Home or another app parks the session while the game is still running, and returning continues it without the splash. When you close or kill the game, the session ends and GameSpace stops about 20 seconds later. Force stop now really stops the app; the next game you open starts it again.",
+     "With Root, the watcher also starts at boot. With Shizuku or Axeron, it starts when the service is running, so after a reboot games are detected again once you start Shizuku or Axeron.",
+     "Turn it off in Game Space Center > Other options (Handheld) or Settings > Other (Gamepad). Without privileged access, GameSpace keeps using the always-on detector, because Android offers ordinary apps no other way to see that a game has opened."
     ]
    },
    {
-    "title": "A tidier Gravity X",
+    "title": "Smoother game start",
     "paragraphs": [
-     "Each Gravity X screen has a Minimize action. Its window becomes a draggable bubble while touch and gamepad input continue reaching the game.",
-     "Drag the editor toolbar using its left handle or collapse it into one row. Mapping buttons stay above the toolbar and remain reachable."
+     "Fixed the game-start animation (most often Energy Cube v2 and v3) freezing on one frame and staying on screen. A safety timer also closes the animation if it ever stops drawing.",
+     "Hunt Mode draws each frame with less work, which saves GPU time during long sessions."
     ]
    },
    {
-    "title": "Lighter overlays",
+    "title": "New intros",
     "paragraphs": [
-     "Hidden overlays stop drawing. FPS sampling and telemetry pause while the screen is off.",
-     "Macro path overlays animate only during playback. In Shizuku or Axeron mode, sensor readers use the GameSpace server when it is active.",
-     "These are source-level changes. Results still depend on Android, your ROM and available access; test them on your device."
+     "Handheld: the tunnel now flies toward you from a distance instead of pulling backward, and the logo fades in while growing slightly, then settles.",
+     "Gamepad: a new Wave opening. Soft light ribbons flow across the screen, the G emblem fades in in front of them and the GAME SPACE wordmark follows. The blue horizontal line at the start is gone."
+    ]
+   },
+   {
+    "title": "License",
+    "paragraphs": [
+     "From 1.5.0, GameSpace is proprietary, closed-source software. Leftover GPL notices from early development were removed. See FAQ and support status for details."
+    ]
+   },
+   {
+    "title": "Test on your device",
+    "paragraphs": [
+     "Results still depend on Android, your ROM and available access. Older changes are listed in the release notes on GitHub Releases."
     ]
    }
   ]
@@ -167,6 +179,13 @@
      "Usage access detects foreground games and records playtime. Overlay access enables panels, FPS, crosshairs and anti-mistouch zones. Regular notifications provide foreground-service status and controls.",
      "Notification access supports Barrage, compatible call popups and Device Auto music. You can disable Barrage while continuing to use Device Auto.",
      "DND access controls interruption settings. Supported magnification features use Accessibility, separately from Root/ADB access. Music files are selected through Android's document picker."
+    ]
+   },
+   {
+    "title": "Backend mode",
+    "paragraphs": [
+     "With Shizuku, Axeron or Root, a small watcher detects your library games, so the GameSpace app does not need to stay running. It is on by default and can be turned off in Game Space Center > Other options (Handheld) or Settings > Other (Gamepad).",
+     "Root also starts the watcher at boot. Shizuku and Axeron must be running for games to be detected. In Basic mode, GameSpace uses an always-on foreground service instead."
     ]
    },
    {
@@ -227,6 +246,7 @@
     "title": "Handheld",
     "paragraphs": [
      "The landscape lobby brings together your library, quick controls, wallpapers, decorations and profile. Add a game, select it and choose Start.",
+     "Super Base gathers extra tools. Its App Templates card holds your whitelist and blacklist: apps GameSpace must never close, and apps it closes when a game starts.",
      "Floating Wallpaper can be disabled or use Orbit, Starflight, Alien and Crystal. Backdrops, particles, vignette and personal images are configured separately."
     ]
    },
@@ -234,7 +254,8 @@
     "title": "Gamepad",
     "paragraphs": [
      "Console mode provides controller input, visible focus and on-screen button hints. Glyphs follow the detected controller; test the actual mapping with your own device.",
-     "Use the directional buttons or stick to navigate, then follow the legend to select or go back. Android manages pairing and input devices."
+     "Use the directional buttons or stick to navigate, then follow the legend to select or go back. Android manages pairing and input devices.",
+     "Gamepad has its own console-style Super Base under Tools, with App Templates, FPS Results, Album, Plugins and more. Press A to open a tile and B to go back."
     ]
    }
   ]
@@ -350,7 +371,7 @@
     "title": "Validation limits",
     "paragraphs": [
      "Low current alone is not proof of bypass. Temperature, load, cable quality and the charging controller can all change current readings.",
-     "The charging workflow has not been validated on every model. This documentation describes source behavior, not hardware certification."
+     "The charging workflow has not been validated on every model. This documentation describes how the app is designed to behave, not hardware certification."
     ]
    }
   ]
@@ -542,14 +563,15 @@
    {
     "title": "Android services",
     "paragraphs": [
-     "Foreground services maintain game detection, overlays, music and enabled tools. Most internal services are not exported. Notification and accessibility services use Android binding permissions.",
+     "Game detection, overlays, music and enabled tools run as foreground services. With Shizuku, Axeron or Root, backend mode starts these services only when the app is open or a library game is running, and they stop about 20 seconds after the game is closed. In Basic mode, game detection stays running. Most internal services are not exported. Notification and accessibility services use Android binding permissions.",
+     "Switching away from a game parks its session while the game process is still alive. If the game is closed or killed, the session ends. A time limit you set yourself still applies.",
      "Closing a game, locking the screen, stopping a service or revoking access should follow the available cleanup/recovery paths. A ROM may stop services despite requested battery exemptions."
     ]
    },
    {
     "title": "Testing status",
     "paragraphs": [
-     "The source includes cleanup, sampling limits and recovery. That alone does not establish battery use, long-term stability or recovery on every ROM.",
+     "GameSpace includes cleanup, sampling limits and recovery. That alone does not establish battery use, long-term stability or recovery on every ROM.",
      "An error-free UI does not prove backend behavior. Test session start/end, rotation, lock/unlock, access loss and recovery after process termination."
     ]
    }
@@ -629,35 +651,34 @@
  },
  {
   "id": "build",
-  "title": "Building and repository structure",
-  "description": "Developer setup and the project's build workflow.",
-  "group": "Developer",
+  "title": "Releases and source code",
+  "description": "Where to get GameSpace, how updates work and why the source is closed.",
+  "group": "Project",
   "sections": [
    {
-    "title": "Toolchain",
+    "title": "Official downloads",
     "paragraphs": [
-     "Use JDK 21 and the Android SDK/build tools selected by the project. The supplied source uses SDK 37 with its configured minor API level and Build Tools 37.0.0. Minimum Android API is 29; target SDK is selected in app/build.gradle.kts. Read plugin and wrapper versions from the repository.",
-     "Run bash gradlew :app:assembleDebug for a development APK and bash gradlew :app:testDebugUnitTest for unit tests. Debug output is in app/build/outputs/apk/debug/."
+     "Download GameSpace only from GitHub Releases of zuanvfx02/zkmnext-gamespace or the official Telegram channel. Take the .apk under Assets. The Source code (zip / tar.gz) entries that GitHub adds to every release only contain this documentation; they are not the app and cannot be installed.",
+     "Copies from other sites, modified or re-signed APKs and rebranded versions are not official and may be unsafe."
     ]
    },
    {
-    "title": "Delivery baseline",
+    "title": "Updates",
     "paragraphs": [
-     "Release and native-backend configuration remain in the source. Follow the existing build workflow for its CMake, NDK and Rust requirements. Documentation revisions are not APK version numbers.",
-     "UI/JVM compilation and targeted tests do not replace a complete native release build or physical-device testing. Read the validation notes for the checks actually performed."
+     "The app checks stable GitHub Releases and shows an update dialog with the release notes. Downloads and installs always need your confirmation. An APK signed with a different key may need an uninstall first, which can remove local data, so back up before switching builds."
     ]
    },
    {
-    "title": "Source map",
+    "title": "Source code",
     "paragraphs": [
-     "app/src/main/kotlin/com/zkmnext/gamespace/feature/gamespace contains UI, overlays, session tools, music and Game Center. Its tune subdirectory contains tuning engines and configuration.",
-     "library/device contains monitoring/input/usage, library/shell contains access backends, and core contains compatibility, diagnostics, updates and modes. Run app/src/test and androidTest in their appropriate environments."
+     "GameSpace is proprietary, closed-source software. Its source code is not published and is not available under any license, and the app is not licensed under the GPL. This repository holds releases, release notes, documentation and the issue tracker.",
+     "The older Zuan Kernel Manager Next is a separate open-source project; its license does not extend to GameSpace."
     ]
    },
    {
-    "title": "Contributing",
+    "title": "Helping the project",
     "paragraphs": [
-     "Read CONTRIBUTING.md. Keep changes focused, explain before/after behavior and report the tests actually run. Do not include tokens, passwords, private media or sensitive logs."
+     "Report bugs with the app version, Android version, device, ROM, access mode and steps to reproduce. Share ideas in the discussion group. Do not include tokens, passwords, private media or sensitive logs."
     ]
    }
   ]
@@ -709,6 +730,12 @@
   "group": "Help",
   "sections": [
    {
+    "title": "Why does GameSpace stop after I close my game?",
+    "paragraphs": [
+     "That is backend mode, on by default with Shizuku, Axeron or Root. GameSpace runs while the app is open or a library game is running and stops shortly after the game closes, so it does not sit in the background all day. Opening a game starts it again."
+    ]
+   },
+   {
     "title": "Is Root required?",
     "paragraphs": [
      "Not for basic features. Some tools require shell or Root, and some also need compatible hardware or kernel interfaces."
@@ -729,13 +756,20 @@
    {
     "title": "Can I download an APK here?",
     "paragraphs": [
-     "This website documents the source. Source packages are not installable APKs. Use the owner's published GitHub Releases for available builds."
+     "Yes, from GitHub Releases: take the .apk under Assets. The Source code (zip / tar.gz) archives GitHub adds to a release only contain this documentation and are not installable."
+    ]
+   },
+   {
+    "title": "Is GameSpace open source?",
+    "paragraphs": [
+     "No. GameSpace is closed source and is not licensed under the GPL. Early builds carried leftover GPL notices; they were removed in 1.5.0. You may install and use the official APK, but copying, modifying, decompiling, repackaging or re-uploading it, or its assets such as ZEA, needs written permission."
     ]
    },
    {
     "title": "Licensing and ownership",
     "paragraphs": [
-     "The project is ZKMNEXT, maintained by zuanvfx02. Source licensing is stated in LICENSE; supporting components retain their documented third-party terms and notices.",
+     "ZKMNEXT GameSpace is proprietary software by ZKMNEXT, maintained by zuanvfx02. All rights reserved. The full terms are in LICENSE.",
+     "Open-source libraries used by the app keep their own licenses; they are listed in THIRD-PARTY-NOTICES.md. Those licenses cover only those libraries, not GameSpace.",
      "This documentation does not claim bug-free operation, universal compatibility or that every third-party library is original ZKMNEXT code."
     ]
    }
