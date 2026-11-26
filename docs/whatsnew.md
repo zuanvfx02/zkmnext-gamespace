@@ -1,39 +1,47 @@
-# What's new in ZE2 v43f
+# What's new in 1.5.0
 
-An Expressive introduction, the first Explore tour, Energy Cube improvements and a new docs website.
+App Templates, Super Base for Gamepad, a GameSpace that only runs when you need it, smoother game-start animations and new intros.
 
-## The Expressive experience
+## App Templates
 
-The introduction retains ZKMNEXT's identity with a vector Energy Cube, layered page transitions and animated step indicators. The Explore tour opens real app pages and can be replayed from Troubleshooting.
+Super Base has a new App Templates page. A whitelist holds apps GameSpace must never close, such as a VPN or ping booster. It is respected by Clean RAM at game start, Clean now, Dynamic manager and Limit background apps. You can also protect every VPN app automatically, plus your launcher, keyboard, SMS and phone apps.
 
-Energy Cube caps decorative rendering. Version 2 caches text measurements and uses one frame clock. The docs website adds a new landing page, keyboard-accessible mode tabs and a clearer reading experience.
+A blacklist holds apps that GameSpace closes when a game starts, either fully (force stop) or only their background processes. If an app is on both lists, the whitelist wins.
 
-## Input plugins work together
+Keep several templates and switch each one on or off. Share a template as a .json file, copy it as text for a chat, import it from a file or the clipboard with a preview, or back up and restore your whole configuration. Your old Keep running list becomes a whitelist template automatically.
 
-Keymap, Shoulder Triggers, Gravity X and Macro playback share one touch session. Each plugin holds its own lease, so stopping one does not stop the others.
+Closing other apps needs Shizuku, Axeron or Root.
 
-TouchLanes assigns local finger IDs to 32 physical lanes. Keymap buttons and Macro fingers no longer overwrite each other.
+## Super Base for Gamepad
 
-Recording a macro still requires raw touchscreen capture. If a mapper owns the screen, GameSpace shows a message instead of recording empty data. The sensitivity wheel cannot run alongside touch mapping yet.
+Gamepad mode has its own console-style Super Base: large tiles, D-pad focus, A to open and B to go back. It holds App Templates, FPS Results, Album, FG, ZEA, Game Center, Control panel, Plugins, Custom mode and Root tools. Open it from Tools under Play.
 
-## Scout shuts down completely
+## GameSpace only runs when you need it
 
-ScoutGuard records system settings before Scout changes them. GameSpace restores them when you disable Scout and when the app opens again.
+With Shizuku, Axeron or Root, backend mode is on by default. It works like the small background daemons of Magisk or KernelSU: a tiny watcher runs in the background and the GameSpace app does not. When one of your library games comes to the front, it starts GameSpace with the splash, panel and overlays as usual.
 
-If you force-stop the app, the Root process or shell server runs the recovery script previously registered by ScoutGuard.
+Switching to Home or another app parks the session while the game is still running, and returning continues it without the splash. When you close or kill the game, the session ends and GameSpace stops about 20 seconds later. Force stop now really stops the app; the next game you open starts it again.
 
-Accessibility services you enabled yourself stay enabled. GameSpace only detaches services that Scout enabled through Root or Shizuku.
+With Root, the watcher also starts at boot. With Shizuku or Axeron, it starts when the service is running, so after a reboot games are detected again once you start Shizuku or Axeron.
 
-## A tidier Gravity X
+Turn it off in Game Space Center > Other options (Handheld) or Settings > Other (Gamepad). Without privileged access, GameSpace keeps using the always-on detector, because Android offers ordinary apps no other way to see that a game has opened.
 
-Each Gravity X screen has a Minimize action. Its window becomes a draggable bubble while touch and gamepad input continue reaching the game.
+## Smoother game start
 
-Drag the editor toolbar using its left handle or collapse it into one row. Mapping buttons stay above the toolbar and remain reachable.
+Fixed the game-start animation (most often Energy Cube v2 and v3) freezing on one frame and staying on screen. A safety timer also closes the animation if it ever stops drawing.
 
-## Lighter overlays
+Hunt Mode draws each frame with less work, which saves GPU time during long sessions.
 
-Hidden overlays stop drawing. FPS sampling and telemetry pause while the screen is off.
+## New intros
 
-Macro path overlays animate only during playback. In Shizuku or Axeron mode, sensor readers use the GameSpace server when it is active.
+Handheld: the tunnel now flies toward you from a distance instead of pulling backward, and the logo fades in while growing slightly, then settles.
 
-These are source-level changes. Results still depend on Android, your ROM and available access; test them on your device.
+Gamepad: a new Wave opening. Soft light ribbons flow across the screen, the G emblem fades in in front of them and the GAME SPACE wordmark follows. The blue horizontal line at the start is gone.
+
+## License
+
+From 1.5.0, GameSpace is proprietary, closed-source software. Leftover GPL notices from early development were removed. See FAQ and support status for details.
+
+## Test on your device
+
+Results still depend on Android, your ROM and available access. Older changes are listed in the release notes on GitHub Releases.

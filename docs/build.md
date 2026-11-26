@@ -1,25 +1,23 @@
-# Building and repository structure
+# Releases and source code
 
-Developer setup and the project's build workflow.
+Where to get GameSpace, how updates work and why the source is closed.
 
-## Toolchain
+## Official downloads
 
-Use JDK 21 and the Android SDK/build tools selected by the project. The supplied source uses SDK 37 with its configured minor API level and Build Tools 37.0.0. Minimum Android API is 29; target SDK is selected in app/build.gradle.kts. Read plugin and wrapper versions from the repository.
+Download GameSpace only from GitHub Releases of zuanvfx02/zkmnext-gamespace or the official Telegram channel. Take the .apk under Assets. The Source code (zip / tar.gz) entries that GitHub adds to every release only contain this documentation; they are not the app and cannot be installed.
 
-Run bash gradlew :app:assembleDebug for a development APK and bash gradlew :app:testDebugUnitTest for unit tests. Debug output is in app/build/outputs/apk/debug/.
+Copies from other sites, modified or re-signed APKs and rebranded versions are not official and may be unsafe.
 
-## Delivery baseline
+## Updates
 
-Release and native-backend configuration remain in the source. Follow the existing build workflow for its CMake, NDK and Rust requirements. Documentation revisions are not APK version numbers.
+The app checks stable GitHub Releases and shows an update dialog with the release notes. Downloads and installs always need your confirmation. An APK signed with a different key may need an uninstall first, which can remove local data, so back up before switching builds.
 
-UI/JVM compilation and targeted tests do not replace a complete native release build or physical-device testing. Read the validation notes for the checks actually performed.
+## Source code
 
-## Source map
+GameSpace is proprietary, closed-source software. Its source code is not published and is not available under any license, and the app is not licensed under the GPL. This repository holds releases, release notes, documentation and the issue tracker.
 
-app/src/main/kotlin/com/zkmnext/gamespace/feature/gamespace contains UI, overlays, session tools, music and Game Center. Its tune subdirectory contains tuning engines and configuration.
+The older Zuan Kernel Manager Next is a separate open-source project; its license does not extend to GameSpace.
 
-library/device contains monitoring/input/usage, library/shell contains access backends, and core contains compatibility, diagnostics, updates and modes. Run app/src/test and androidTest in their appropriate environments.
+## Helping the project
 
-## Contributing
-
-Read CONTRIBUTING.md. Keep changes focused, explain before/after behavior and report the tests actually run. Do not include tokens, passwords, private media or sensitive logs.
+Report bugs with the app version, Android version, device, ROM, access mode and steps to reproduce. Share ideas in the discussion group. Do not include tokens, passwords, private media or sensitive logs.

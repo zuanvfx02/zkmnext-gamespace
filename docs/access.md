@@ -18,6 +18,12 @@ Notification access supports Barrage, compatible call popups and Device Auto mus
 
 DND access controls interruption settings. Supported magnification features use Accessibility, separately from Root/ADB access. Music files are selected through Android's document picker.
 
+## Backend mode
+
+With Shizuku, Axeron or Root, a small watcher detects your library games, so the GameSpace app does not need to stay running. It is on by default and can be turned off in Game Space Center > Other options (Handheld) or Settings > Other (Gamepad).
+
+Root also starts the watcher at boot. Shizuku and Axeron must be running for games to be detected. In Basic mode, GameSpace uses an always-on foreground service instead.
+
 ## If access is disconnected
 
 Start Shizuku/Axeron and grant GameSpace permission. Select the correct backend, check its UID and status, then run the compatibility test again.

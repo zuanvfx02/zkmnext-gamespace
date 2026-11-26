@@ -4,13 +4,13 @@ Set up your first game and choose your playing experience.
 
 ## About ZKMNEXT
 
-ZKMNEXT GameSpace is an Android game launcher, device monitor and overlay toolkit. Project identity: ZKMNEXT · zuanvfx02. ZE2 v43f preserves Explore and adds the Expressive experience.
+ZKMNEXT GameSpace is an Android game launcher, device monitor and overlay toolkit. Project identity: ZKMNEXT · zuanvfx02. Version 1.5.0 keeps Explore, Handheld and Gamepad, and adds App Templates, a console Super Base for Gamepad and backend mode.
 
 Features run on your device without a GameSpace account. System controls depend on Android, your ROM, chipset, kernel and granted access.
 
 ## Your first three steps
 
-1. Install the APK from a source you trust and open GameSpace. Android 10 / API 29 is the minimum requirement.
+1. Download the APK from the official GitHub Releases or the official Telegram channel and open GameSpace. Android 10 / API 29 is the minimum requirement.
 
 Complete the introduction, then try the Explore tour to discover the library, controls, monitor and Settings. Skip or replay it through Settings > Troubleshooting.
 

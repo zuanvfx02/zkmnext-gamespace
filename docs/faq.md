@@ -2,6 +2,10 @@
 
 Straight answers about supported behavior.
 
+## Why does GameSpace stop after I close my game?
+
+That is backend mode, on by default with Shizuku, Axeron or Root. GameSpace runs while the app is open or a library game is running and stops shortly after the game closes, so it does not sit in the background all day. Opening a game starts it again.
+
 ## Is Root required?
 
 Not for basic features. Some tools require shell or Root, and some also need compatible hardware or kernel interfaces.
@@ -16,10 +20,16 @@ No. The v8.26 changes improve viewport calculations and panel positioning. Sourc
 
 ## Can I download an APK here?
 
-This website documents the source. Source packages are not installable APKs. Use the owner's published GitHub Releases for available builds.
+Yes, from GitHub Releases: take the .apk under Assets. The Source code (zip / tar.gz) archives GitHub adds to a release only contain this documentation and are not installable.
+
+## Is GameSpace open source?
+
+No. GameSpace is closed source and is not licensed under the GPL. Early builds carried leftover GPL notices; they were removed in 1.5.0. You may install and use the official APK, but copying, modifying, decompiling, repackaging or re-uploading it, or its assets such as ZEA, needs written permission.
 
 ## Licensing and ownership
 
-The project is ZKMNEXT, maintained by zuanvfx02. Source licensing is stated in LICENSE; supporting components retain their documented third-party terms and notices.
+ZKMNEXT GameSpace is proprietary software by ZKMNEXT, maintained by zuanvfx02. All rights reserved. The full terms are in LICENSE.
+
+Open-source libraries used by the app keep their own licenses; they are listed in THIRD-PARTY-NOTICES.md. Those licenses cover only those libraries, not GameSpace.
 
 This documentation does not claim bug-free operation, universal compatibility or that every third-party library is original ZKMNEXT code.

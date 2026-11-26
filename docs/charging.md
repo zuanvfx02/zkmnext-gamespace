@@ -18,4 +18,4 @@ If restoration fails, stop experimenting, restore the required access and use Re
 
 Low current alone is not proof of bypass. Temperature, load, cable quality and the charging controller can all change current readings.
 
-The charging workflow has not been validated on every model. This documentation describes source behavior, not hardware certification.
+The charging workflow has not been validated on every model. This documentation describes how the app is designed to behave, not hardware certification.

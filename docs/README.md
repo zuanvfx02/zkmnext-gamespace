@@ -6,7 +6,7 @@
 
 - [Start here](index.html#start) — Set up your first game and choose your playing experience.
 - [Expressive experience](index.html#expressive) — A livelier introduction, your first Explore tour, and a more measured Energy Cube.
-- [What's new in ZE2 v43f](index.html#whatsnew) — An Expressive introduction, the first Explore tour, Energy Cube improvements and a new docs website.
+- [What's new in 1.5.0](index.html#whatsnew) — App Templates, Super Base for Gamepad, a GameSpace that only runs when you need it, smoother game-start animations and new intros.
 - [Access and permissions](index.html#access) — Basic, Shizuku/Axeron and Root provide different capabilities.
 - [Explore: Material 3 Expressive](index.html#explore) — Five focused destinations and one direct tuning dashboard.
 
@@ -37,9 +37,9 @@
 - [Data, backups and recovery](index.html#backup) — Keep local backups under your control.
 - [Privacy and connections](index.html#privacy) — Local data, permissions and network activity explained.
 
-## Developer
+## Project
 
-- [Building and repository structure](index.html#build) — Developer setup and the project's build workflow.
+- [Releases and source code](index.html#build) — Where to get GameSpace, how updates work and why the source is closed.
 
 ## Help
 

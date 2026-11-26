@@ -12,6 +12,8 @@ Search opens the same settings pages. Manage per-app profiles and profile transf
 
 The landscape lobby brings together your library, quick controls, wallpapers, decorations and profile. Add a game, select it and choose Start.
 
+Super Base gathers extra tools. Its App Templates card holds your whitelist and blacklist: apps GameSpace must never close, and apps it closes when a game starts.
+
 Floating Wallpaper can be disabled or use Orbit, Starflight, Alien and Crystal. Backdrops, particles, vignette and personal images are configured separately.
 
 ## Gamepad
@@ -19,3 +21,5 @@ Floating Wallpaper can be disabled or use Orbit, Starflight, Alien and Crystal. 
 Console mode provides controller input, visible focus and on-screen button hints. Glyphs follow the detected controller; test the actual mapping with your own device.
 
 Use the directional buttons or stick to navigate, then follow the legend to select or go back. Android manages pairing and input devices.
+
+Gamepad has its own console-style Super Base under Tools, with App Templates, FPS Results, Album, Plugins and more. Press A to open a tile and B to go back.

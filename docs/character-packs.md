@@ -41,7 +41,7 @@ Loop definitions specify a target layer, 2–64 frame references and 1–24 fps.
 
 ## Limits
 
-The current source supports up to 600 parts and 256 moods. Total uncompressed pack content is capped at 16 MB, mascot.json at 512 KB, and each image at 4 MB. Image dimensions and sprite cells are validated. Character ZIPs accept mascot.json, PNG and WebP files; unrelated file types are rejected. Unreferenced preview images are discarded on import. Read actual importer errors for the invalid field or asset.
+The current app supports up to 600 parts and 256 moods. Total uncompressed pack content is capped at 16 MB, mascot.json at 512 KB, and each image at 4 MB. Image dimensions and sprite cells are validated. Character ZIPs accept mascot.json, PNG and WebP files; unrelated file types are rejected. Unreferenced preview images are discarded on import. Read actual importer errors for the invalid field or asset.
 
 ## Tools
 
