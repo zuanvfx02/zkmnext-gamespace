@@ -1,0 +1,56 @@
+ZKMNEXT GameSpace - Proprietary Software License
+
+Copyright (c) 2025-2026 ZKMNEXT (zuanvfx02). All rights reserved.
+
+ZKMNEXT GameSpace ("the Software"), including its source code, compiled code,
+native libraries, assets, artwork, the ZEA character, character packs,
+documentation, the documentation website and design, is proprietary. It is
+the sole property of ZKMNEXT and is protected by copyright law and
+international treaties. The Software is closed source; its source code is
+confidential and is not published. It is NOT released under the GNU General
+Public License or any other open-source license, and no earlier notice in any
+release, document or source tree grants such a license.
+
+1. Permitted use
+   You may download the official APK from the official channels (the GitHub
+   releases of zuanvfx02/zkmnext-gamespace or the official Telegram channel)
+   and install and use it on devices you own or control, for personal,
+   non-commercial use.
+
+2. Restrictions
+   Unless ZKMNEXT gives you prior written permission, you may not:
+   a. copy, publish, distribute, sell, rent, sublicense or otherwise make the
+      Software or any part of it available to others;
+   b. modify, translate, adapt, repackage, rebrand or create derivative works
+      based on the Software;
+   c. decompile, disassemble, reverse engineer or attempt to extract the source
+      code, except where applicable law expressly permits this despite this
+      restriction;
+   d. remove, alter or obscure any copyright, trademark or other notice;
+   e. bypass or disable the Software's integrity, signature or licence checks;
+   f. present the Software, or any work based on it, as your own.
+
+3. Source code
+   Access to the source code does not grant any licence. Any copy of the source
+   code that is not held by ZKMNEXT, or by someone ZKMNEXT authorised in
+   writing, is unauthorised.
+
+4. Third-party components
+   The Software includes third-party open-source components. Each of them is
+   licensed under its own terms, listed in THIRD-PARTY-NOTICES.md. The font
+   used by the documentation website is licensed under the SIL Open Font
+   License (docs/licenses). Those terms apply only to those components and
+   do not apply to the Software as a whole.
+
+5. No warranty
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL
+   ZKMNEXT BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING DEVICE
+   DAMAGE, DATA LOSS OR ACCOUNT BANS, ARISING FROM THE USE OF THE SOFTWARE.
+
+6. Termination
+   This licence ends automatically if you break any of its terms. You must then
+   stop using the Software and delete every copy you have.
+
+Contact: https://github.com/zuanvfx02 - https://t.me/ZUANVFXPROJECT3

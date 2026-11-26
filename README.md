@@ -16,7 +16,7 @@ Set it up once, then play the way you want. Made by **zuanvfx02**.
 ![Android 10+](https://img.shields.io/badge/Android-10%2B-3DDC84?logo=android&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-Jetpack%20Compose-7F52FF?logo=kotlin&logoColor=white)
 ![Access](https://img.shields.io/badge/access-Basic%20·%20Shizuku%20·%20Axeron%20·%20Root-8D5AF5)
-![License](https://img.shields.io/badge/license-GPL--3.0--or--later-blue)
+![License](https://img.shields.io/badge/license-Proprietary%20%C2%B7%20All%20rights%20reserved-red)
 
 [**Download**](https://github.com/zuanvfx02/zkmnext-gamespace/releases/latest) ·
 [Releases & changelogs](https://github.com/zuanvfx02/zkmnext-gamespace/releases) ·
@@ -36,13 +36,13 @@ Set it up once, then play the way you want. Made by **zuanvfx02**.
 - [Meet ZEA](#meet-zea)
 - [ZEA previews](#zea-previews)
 - [Why GameSpace](#why-gamespace)
-- [What's new in ZE2 v25](#whats-new-in-ze2-v25)
+- [What's new in 1.5.0](#whats-new-in-150)
 - [Features](#features)
 - [Requirements and access modes](#requirements-and-access-modes)
 - [Install and update](#install-and-update)
 - [Troubleshooting](#troubleshooting)
 - [Privacy and security](#privacy-and-security)
-- [Source availability and licensing](#source-availability-and-licensing)
+- [License](#license)
 - [How it works](#how-it-works)
 - [Community](#community)
 - [Feedback and support](#feedback-and-support)
@@ -82,16 +82,20 @@ These previews show the actual Android Character Studio with ZEA Void.
 - **Your inputs, your rules.** Keymap, Shoulder Triggers, Gravity X and Macro can run side by side without fighting each other.
 - **Straight about its limits.** Each feature is checked per device, and the app tells you what your hardware and access mode can actually do.
 
-## What's new in ZE2 v25
+## What's new in 1.5.0
 
-This release is about making everything play nicely together.
+GameSpace now only runs when you need it, and you decide which apps it may close.
 
 | | |
 | --- | --- |
-| **Input plugins work together** | Keymap, Shoulder Triggers, Gravity X and Macro playback share one touch session. Turning one off no longer stops the others, and finger IDs never collide. |
-| **Scout turns fully off** | Switching Scout off closes the lens and restores the system magnification settings. That also happens after GameSpace is force-stopped. |
-| **Gravity X can be minimized** | Every Gravity X screen shrinks to a draggable bubble. The editor toolbar can be moved and collapsed, and mapping buttons stay above it. |
-| **Lighter overlays** | Hidden overlays stop drawing. FPS and telemetry sampling pause while the screen is off. |
+| **App Templates** | A whitelist for apps GameSpace must never close (VPN, ping booster) and a blacklist for apps it closes when a game starts. Keep several templates, share them as `.json`, import with a preview, and back up or restore your setup. Find it in Super Base. |
+| **Super Base for Gamepad** | Gamepad mode gets its own console-style Super Base with big tiles and D-pad focus: App Templates, FPS Results, Album, Plugins and more. |
+| **Runs only when needed** | With Shizuku, Axeron or Root, backend mode is on by default. A tiny watcher detects your games and starts GameSpace; the app itself no longer sits in the background. Switching apps keeps the session while the game is alive; closing the game ends it and GameSpace stops shortly after. Force stop really stops it. |
+| **Smoother game start** | Fixed the start animation (Energy Cube v2/v3) freezing on one frame. Hunt Mode does less work per frame. |
+| **New intros** | Handheld's tunnel now flies toward you and the logo settles in gently. Gamepad opens with the new Wave animation. |
+| **Proprietary license** | GameSpace is closed source. Leftover GPL notices from early development were removed. See [License](#license). |
+
+Full notes for every version are on the [Releases](https://github.com/zuanvfx02/zkmnext-gamespace/releases) page.
 
 ## Features
 
@@ -104,6 +108,7 @@ This release is about making everything play nicely together.
 - Per-game profiles instead of one global setting.
 - Custom covers, backgrounds and profile appearance.
 - GameSpace Center and Super Base for tools and settings.
+- **App Templates**: whitelist apps GameSpace must never close and blacklist apps to close at game start. Share, import, back up and restore them as JSON.
 
 </td>
 <td width="50%" valign="top">
@@ -111,7 +116,7 @@ This release is about making everything play nicely together.
 ### Interface modes
 - **Explore**: an everyday dashboard and settings.
 - **Handheld**: a landscape, console-inspired lobby.
-- **Gamepad**: controller-first navigation.
+- **Gamepad**: controller-first navigation, with its own console-style Super Base.
 - Themes, colors, wallpaper and effects. Blur needs Android 12+ and device support.
 
 </td>
@@ -169,6 +174,8 @@ Each plugin's availability is checked separately. Android or a game may restrict
 | **Axeron** | Privileged-shell operations through the configured Axeron backend. |
 | **Root** | System and kernel controls when root is available and the device exposes the required interfaces. |
 
+With Shizuku, Axeron or Root, **backend mode** is on by default: a small background watcher (like the daemons of Magisk or KernelSU) starts GameSpace when one of your games opens, and GameSpace stops again after the game closes. With Root the watcher also starts at boot; with Shizuku or Axeron it needs the service to be running. Turn it off in Game Space Center › Other options (Handheld) or Settings › Other (Gamepad). In Basic mode GameSpace keeps its always-on game detection.
+
 <details>
 <summary><b>Permissions and why they are requested</b></summary>
 
@@ -189,7 +196,7 @@ Grant only what the features you use need. Android and ROM restrictions can stil
 ## Install and update
 
 1. Open [GitHub Releases](https://github.com/zuanvfx02/zkmnext-gamespace/releases).
-2. Download the **`.apk` under Assets**. The generated "Source code (zip / tar.gz)" entries are not installable apps.
+2. Download the **`.apk` under Assets**. The "Source code (zip / tar.gz)" entries GitHub adds to every release only contain this documentation. They are not the app and cannot be installed.
 3. Install it, allowing your browser or file manager to install apps if Android asks.
 4. Add a game, choose an interface mode and grant the optional permissions you need.
 
@@ -214,6 +221,7 @@ That's it. You're ready to play.
 | No update notification | Notification permission and the App updates channel. The in-app dialog works without it. |
 | Install/update rejected | Signing key, `versionCode`, Android compatibility and whether the download finished. |
 | Overlay missing | Overlay permission, game detection and the ROM's background/battery restrictions. |
+| GameSpace doesn't start with a game | The game is in your library, Shizuku/Axeron is running (needed again after a reboot) and backend mode's status in Other options. Turning backend mode off brings back always-on detection. |
 | Sensor, FPS or control missing | Run the compatibility checks and verify access. Universal monitoring is not guaranteed. |
 | Black screen or force-close | Open an issue with the version, device/ROM, access mode, steps and available diagnostics. |
 
@@ -224,18 +232,19 @@ Settings and media are handled locally by the features that use them, and Androi
 > [!WARNING]
 > Never post private keys, keystores, passwords, tokens or personal diagnostics in an issue. Review diagnostic exports before sharing, and report security problems through the repository's security-reporting route instead of a public issue.
 
-## Source availability and licensing
+## License
 
-**The current development source is not publicly published.** This repository is for APK releases, release notes, documentation and issue tracking. It is not a public checkout of the current development tree.
+**ZKMNEXT GameSpace is proprietary, closed-source software. Copyright (c) 2025-2026 ZKMNEXT (zuanvfx02). All rights reserved.**
 
-<details>
-<summary><b>License obligations</b></summary>
+- This repository holds APK releases, release notes, documentation and the issue tracker. It does **not** contain the app's source code, and the source code is not available under any license.
+- GameSpace is **not** open source and is **not** licensed under the GPL. Leftover GPL notices from early development were removed in version 1.5.0; from 1.5.0 on, every release is proprietary.
+- You may install and use the official APK on your own devices. Copying, modifying, decompiling, repackaging, reselling, rebranding or re-uploading GameSpace or its assets (including the ZEA character) is not allowed without written permission.
+- Only download GameSpace from this repository's [Releases](https://github.com/zuanvfx02/zkmnext-gamespace/releases) or the official Telegram channel.
+- GameSpace uses open-source libraries that keep their own licenses. See [`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md).
 
-This availability status does not replace existing licenses. The project contains GPL-3.0-or-later notices and a GPLv3 license, together with third-party components under their own terms. Applicable copyright notices, license terms and corresponding-source obligations remain in force. Not publishing a repository does not remove the obligations that apply when GPL-covered binaries are distributed. Source requests can be raised with the maintainer through the repository, and the maintainer must make sure the required corresponding source is actually provided through an appropriate channel where applicable.
+> The older app **Zuan Kernel Manager Next** is a separate project with its own open-source license. That license does not extend to GameSpace.
 
-Do not describe GPL-covered upstream code as exclusively proprietary, or remove its notices, because current development is private. This README asserts no new proprietary license. Review `LICENSE`, the third-party notices and the distribution requirements before publishing a release.
-
-</details>
+Full terms: [`LICENSE`](LICENSE).
 
 ## How it works
 
@@ -251,7 +260,7 @@ Curious what happens behind the scenes? The docs site has an interactive 3D map 
 | App force-stopped | ScoutGuard hands a restore script to the privileged process, which runs it when the app dies |
 | Screen off | ScreenGate pauses overlays and FPS sampling |
 
-Node names match the v25 source classes. The animation simplifies timing.
+The map is a simplified picture of the app, and the animation simplifies timing.
 
 ## Community
 
